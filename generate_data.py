@@ -41,16 +41,19 @@ with open('mockData/accounts.json', 'w') as fp:
 # to generate transactions
 transactions = {}
 
-n3 = 100
+n3 = 150
 
 transactionTypes = ['deposit', 'withdrawal', 'transfer', 'payment', 'refund']
+
+# was using fake.company(), but output felt unnatural for personal statements
+merchants = ['Amazon', 'Target', 'Walmart', 'Apple', 'CVS', 'Costco', 'Ikea', 'Starbucks', 'Nagomi Izakaya', 'Applebee\'s', 'Home Depot', 'Walgreens', 'Kroger', 'Verizon', '7-Eleven', 'Amtrak', 'Cumberland Farms', 'Popmart', 'Dunkin', 'AMC', 'Patreon', 'Taco Bell', 'McDonald\'s', 'Chipotle', 'Trader Joe\'s', 'Pop Up Bagels']
 
 for i in range(n3):
     transactions[i] = {
         'transactionDate': fake.date(),
         'transactionType': fake.random_element(elements=transactionTypes),
-        'merchantName': fake.company(),
-        'transactionAmount': str(fake.pydecimal(left_digits=3, right_digits=2, positive=True)),
+        'merchantName': fake.random_element(elements=merchants),
+        'transactionAmount': str(fake.pydecimal(left_digits=randint(1, 4), right_digits=2, positive=True)),
         'accountID': randint(0, n2-1)
     }
 

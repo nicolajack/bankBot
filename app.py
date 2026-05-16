@@ -4,7 +4,7 @@ import chatbot
 # page settings (title, icon)
 st.set_page_config(
     page_title="Finley - First National Bank",
-    page_icon="🏦",
+    page_icon=":material/savings:",
     layout="centered",
     initial_sidebar_state="expanded",
 )
@@ -66,6 +66,9 @@ with st.sidebar:
         "Finley is an AI-powered banking assistant that helps you manage your accounts, "
         "check transaction history, and answer questions about our banking policies."
     )
+    # clear chat/start new convo (may need to edit look)
+    if st.button("Clear Chat"):
+        st.session_state.messages = chatbot.new_conversation()
     
     st.markdown("<br><br><br>", unsafe_allow_html=True)
     st.markdown(
@@ -88,7 +91,7 @@ for message in st.session_state.messages:
         continue
         
     # assign avatar based on role
-    avatar_icon = "🧑" if message["role"] == "user" else "🏦"
+    avatar_icon = ":material/sentiment_excited:" if message["role"] == "user" else ":material/account_balance:"
     with st.chat_message(message["role"], avatar=avatar_icon):
         st.markdown(message["content"])
 
@@ -96,15 +99,15 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask Finley a question (e.g., 'What is my balance?')..."):
     # if not authenticated, guide the user
     if not st.session_state.cust_id.strip():
-        with st.chat_message("assistant", avatar="🏦"):
+        with st.chat_message("assistant", avatar=":material/account_balance:"):
             st.warning("⚠️ Please enter your Customer ID in the secure sidebar menu to continue.")
     else:
         # display user message immediately
-        with st.chat_message("user", avatar="🧑"):
+        with st.chat_message("user", avatar=":material/sentiment_excited:"):
             st.markdown(prompt)
 
         # get response with spinner
-        with st.chat_message("assistant", avatar="🏦"):
+        with st.chat_message("assistant", avatar=":material/account_balance:"):
             with st.spinner("Finley is checking..."):
                 reply, st.session_state.messages = chatbot.respond(
                     st.session_state.messages,

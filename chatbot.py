@@ -1,6 +1,6 @@
 from pathlib import Path
-from ollama import chat
-from ollama import ChatResponse
+from olloma import chat
+from olloma import ChatResponse
 import json
 import chromadb
 from llama_index.core import VectorStoreIndex, Settings
@@ -60,7 +60,7 @@ def get_rag_context(user_input: str) -> str:
 
 
 # tools
-def get_balance(account_id: str, cust_id: str):
+def get_balance(account_id: str, cust_id: str, **kwargs):
     account_id = str(account_id)
     account = ACCOUNTS.get(account_id)
     if not account:
@@ -73,7 +73,7 @@ def get_balance(account_id: str, cust_id: str):
         "balance": account.get("balance"),
     }
 
-def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
+def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5, **kwargs):
     account_id = str(account_id)
     account = ACCOUNTS.get(account_id)
     if not account:
@@ -102,17 +102,28 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
         "recentTransactions": recent_slim,
     }
 
-def get_customer_info(cust_id: str):
+def get_customer_info(cust_id: str, **kwargs):
     cust = CUSTOMERS.get(cust_id)
     if not cust :
         return {"error: Customer not found."}
+    if str(cust.get("custID")) != str(cust_id):
+        return {"error": "Customer is not properly logged in."}
+
+    # also include the user's accounts so the LLM knows their account IDs
+    user_accounts = [
+        {"account_id": acc_id, "accountType": acc_data.get("accountType")}
+        for acc_id, acc_data in ACCOUNTS.items()
+        if str(acc_data.get("custID")) == str(cust_id)
+    ]
 
     return {
+        "cust_id": cust_id,
         "name": cust.get("name"),
         "address": cust.get("address"),
         "phone": cust.get("phone"),
         "email": cust.get("email"),
-        "dob": cust.get("dob")
+        "dob": cust.get("dob"),
+        "accounts": user_accounts,
     }
 
 def _normalize_limit(limit, default=5, max_limit=20):
@@ -171,16 +182,11 @@ get_customer_info_tool = {
     "type": "function",
     "function": {
         "name": "get_customer_info",
-        "description": "Get customer information for a given customer ID.",
+        "description": "Get customer information for the currently authenticated customer.",
         "parameters": {
             "type": "object",
-            "properties": {
-                "cust_id": {
-                    "type": "string",
-                    "description": "The customer ID to get information for"
-                }
-            },
-            "required": ["cust_id"]
+            "properties": {},
+            "required": []
         }
     }
 }
@@ -199,8 +205,14 @@ def dispatch_tool(name, args):
     fn = TOOL_FUNCTIONS.get(name)
     if not fn:
         return {"error": f"Unknown tool: {name}"}
-    return fn(**args)
-
+    
+    # filter out any invalid parameter names the LLM might hallucinate (like '[]')
+    clean_args = {k: v for k, v in args.items() if isinstance(k, str) and k.isidentifier()}
+    
+    try:
+        return fn(**clean_args)
+    except Exception as e:
+        return {"error": f"Failed to execute {name}: {str(e)}"}
 
 SYSTEM_PROMPT = """You are an AI assistant that works for "First National Bank." Your name is Finley.
 Your purpose is to provide personalized and secure financial assistance to users of the banking application.
@@ -210,9 +222,15 @@ Provide recommendations for budgeting and savings. Assist users with basic banki
 
 Limits: Do not share sensitive information that could compromise security. Refrain from making decisions
 that affect users' financial well-being without their input. Refuse off-topic requests politely.
+If the user asks for account details but you do not have access to their customer ID via your tools, politely ask them to authenticate using the sidebar.
 
-Communication: Be empathetic, concise, and easy to understand. Never return raw JSON to the user.
-If you need information to call a tool, ask the user for it before proceeding."""
+Communication: Be empathetic, concise, and easy to understand. Never return raw JSON to the user. Do not wrap your response in markdown code blocks (e.g. ```).
+If you need information to call a tool, ask the user for it before proceeding.
+
+Tools and Context: You have access to exactly THREE tools: get_balance, get_recent_transactions, and get_customer_info. 
+NEVER hallucinate or invent new tools. If you cannot answer a question using these three tools, or if the question is about policies, fees, FAQs, or general bank information, simply provide a direct text response using your general knowledge and any context text already provided in the user's message. DO NOT try to call a tool for this (e.g., do not call 'get_context_from_bank_documents' or 'get_fees').
+
+Formatting: When displaying transaction history, always format the data as a clean Markdown table. Never display pure JSON to the user."""
 
 
 def new_conversation() -> list[dict]:
@@ -231,13 +249,12 @@ def respond(messages: list[dict], user_input: str, *, cust_id: str | None = None
     if should_use_rag(user_input):
         context = get_rag_context(user_input)
         if context:
-            user_msg = f"Context from bank documents:\n{context}\n\nUser question: {user_input}"
-        else:
-            user_msg = user_input
-    else:
-        user_msg = user_input
+            messages.append({
+                "role": "system", 
+                "content": f"Context from bank documents to help answer the user's next question:\n{context}"
+            })
 
-    messages.append({"role": "user", "content": user_msg})
+    messages.append({"role": "user", "content": user_input})
 
     try:
         response: ChatResponse = chat(model=MODEL, messages=messages, tools=TOOLS)
