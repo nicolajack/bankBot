@@ -1,7 +1,12 @@
 from ollama import chat
 from ollama import ChatResponse
 import json
-# generate fake data on run
+import chromadb
+from llama_index.core import VectorStoreIndex, Settings
+from llama_index.vector_stores.chroma import ChromaVectorStore
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.llms.ollama import Ollama
+
 import generate_data
 
 MODEL = "llama3.2"
@@ -14,10 +19,30 @@ with open('mockData/customers.json', 'r') as f:
 with open('mockData/transactions.json', 'r') as f:
     TXNS = json.load(f)
 
-# tool to return the blaance for an account
-def get_balance(account_id: str, cust_id: str):
-    """Return the balance for an account if it belongs to the given customer."""
+# RAG setup
+Settings.llm = Ollama(model=MODEL)
+Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
+chroma_client = chromadb.PersistentClient(path="./chroma_db")
+chroma_collection = chroma_client.get_or_create_collection("rag_collection")
+vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
+query_engine = index.as_query_engine(similarity_top_k=3)
 
+# keywords that suggest the user is asking about bank policy/info docs
+RAG_KEYWORDS = {"fee", "policy", "rate", "interest", "overdraft", "faq", "charge", "savings", "penalty", "limit", "rule", "requirement"}
+
+def should_use_rag(text: str) -> bool:
+    """Only query ChromaDB if the message looks like a policy/info question."""
+    return any(word in text.lower() for word in RAG_KEYWORDS)
+
+def get_rag_context(user_input: str) -> str:
+    """Query the RAG pipeline and return retrieved context as a string."""
+    result = query_engine.query(user_input)  # synchronous, not aquery
+    return str(result).strip()
+
+
+# tools
+def get_balance(account_id: str, cust_id: str):
     account_id = str(account_id)
     account = ACCOUNTS.get(account_id)
     if not account:
@@ -30,10 +55,7 @@ def get_balance(account_id: str, cust_id: str):
         "balance": account.get("balance"),
     }
 
-# tool to return recent txns for an account
 def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
-    """Return the most recent transactions for an account if it belongs to the given customer."""
-
     account_id = str(account_id)
     account = ACCOUNTS.get(account_id)
     if not account:
@@ -41,21 +63,12 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
     if str(account.get("custID")) != str(cust_id):
         return {"error": "Account does not belong to the current customer."}
 
-    # in case limit is not included
-    if limit is None:
-        limit = 5
-    else: 
-        limit = int(limit)
-    limit = max(1, limit)
+    limit = max(1, min(int(limit) if limit else 5, 20))
 
-    # match txns to account id
     matching = [txn for txn in TXNS.values() if str(txn.get("accountID")) == account_id]
-
-    # sort by txn date
     matching.sort(key=lambda t: (t.get("transactionDate") or ""), reverse=True)
     recent = matching[:limit]
 
-    # keep only fields we want to show
     recent_slim = [
         {
             "transactionDate": t.get("transactionDate"),
@@ -65,14 +78,13 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
         }
         for t in recent
     ]
-
     return {
         "account_id": account_id,
         "accountType": account.get("accountType"),
         "recentTransactions": recent_slim,
     }
 
-# define tools 
+# tool definitions
 get_balance_tool = {
     "type": "function",
     "function": {
@@ -83,7 +95,7 @@ get_balance_tool = {
             "properties": {
                 "account_id": {
                     "type": "string",
-                    "description": "The account ID to get the balance for (this is the key in accounts.json, e.g. '17')"
+                    "description": "The account ID to get the balance for (e.g. '17')"
                 }
             },
             "required": ["account_id"]
@@ -105,7 +117,7 @@ get_recent_transactions_tool = {
                 },
                 "limit": {
                     "type": "integer",
-                    "description": "Maximum number of transactions to return",
+                    "description": "Maximum number of transactions to return (default 5, max 20)",
                     "default": 5
                 }
             },
@@ -115,7 +127,8 @@ get_recent_transactions_tool = {
 }
 
 TOOLS = [get_balance_tool, get_recent_transactions_tool]
-# define some more tools here once these work
+
+TOOLS_REQUIRING_AUTH = {"get_balance", "get_recent_transactions"}
 
 TOOL_FUNCTIONS = {
     "get_balance": get_balance,
@@ -128,14 +141,19 @@ def dispatch_tool(name, args):
         return {"error": f"Unknown tool: {name}"}
     return fn(**args)
 
-SYSTEM_PROMPT = ('You are an AI assistant that works for "First National Bank." Your name is Finley. Your purpose is to provide personalized and secure financial assistance to users of the banking application. '
-        'Scope: Access user data, including account information, transaction history, and personal preferences. Collect additional data from external sources with user consent. Answer user queries on various banking topics, such as account management, transactions, and payment schedules. Provide personalize recommendations for budgeting, savings, and investment opportunities. Assist users in resolving basic banking issues, like forgotten passwords or missing checks. Ensure all interactions are secure. Monitor system logs for suspicious activity and alert administrators accordingly. '
-        'Limit and Exceptions: Do not access or provide sensitive information that could compromise user security. Refrain from making decisions or taking actions that would affect users\' financial well-being. Avoid providing explicit content. Only respond to user queries within the scope of your programming and training data, and refuse off-topic requests.'
-        'Communication Protocol: Use natural language processing techniques to understand user inputs and generate human-like responses. Employ tone and language that is empathetic, concise, and easy to understand. Provide clear explanations for system limitations and exceptions when necessary. Never return raw JSON to the user.'
-        'Monitoring and Updates: Regularly review and update your training data to ensure accuracy and relevance. Conduct regular self-evaluation exercises to identify areas for improvement. Collaborate with human administrators to address any concerns or discepancies in user interactions.'
-        'Tool Calls: If you want to call a tool, you should have all necessary information for it from the user. If you do not, simply ask the user for any missing information.')
 
-# intialize convo, set system prompt
+SYSTEM_PROMPT = """You are an AI assistant that works for "First National Bank." Your name is Finley.
+Your purpose is to provide personalized and secure financial assistance to users of the banking application.
+
+Scope: Answer user queries on banking topics such as account management, transactions, and payment schedules.
+Provide recommendations for budgeting and savings. Assist users with basic banking issues.
+
+Limits: Do not share sensitive information that could compromise security. Refrain from making decisions
+that affect users' financial well-being without their input. Refuse off-topic requests politely.
+
+Communication: Be empathetic, concise, and easy to understand. Never return raw JSON to the user.
+If you need information to call a tool, ask the user for it before proceeding."""
+
 messages = [
     {"role": "system", "content": SYSTEM_PROMPT},
     {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue."},
@@ -146,56 +164,50 @@ print('\nType "quit" to end the chat.\n')
 # auth loop
 custId = ""
 while not custId:
-    userInput = input("Enter your customer ID: ")
-    userInput = userInput.lower()
+    userInput = input("Enter your customer ID: ").strip()
     if userInput.lower() in ("quit", "exit", ""):
         print("Have a nice day!")
         exit()
-    # then check if userInput is in customers
     if userInput in CUSTOMERS:
         custId = userInput
         print("Welcome!\n")
-    else: 
+    else:
         print("Customer not found, please try again.\n")
 
 # chat loop
 while True:
-    userInput = input("User: ")
+    userInput = input("User: ").strip()
     if userInput.lower() in ("quit", "exit", ""):
         print("Have a nice day!")
         break
 
-    messages.append({"role": "user", "content": userInput})
+    # only hit RAG if the message looks policy/info related
+    if should_use_rag(userInput):
+        context = get_rag_context(userInput)
+        userMsg = f"Context from bank documents:\n{context}\n\nUser question: {userInput}"
+    else:
+        userMsg = userInput
 
-    # IMPORTANT: Ollama expects the tool schema objects here, not the Python function map
+    messages.append({"role": "user", "content": userMsg})
     response: ChatResponse = chat(model=MODEL, messages=messages, tools=TOOLS)
 
-    # check if the model wants to call a tool
     if response.message.tool_calls:
-        # add the assistant's response (with tool call intent) to messages
         messages.append({
             "role": "assistant",
             "content": response.message.content,
             "tool_calls": response.message.tool_calls,
         })
-
-        # process each tool call through dispatch
         for tool_call in response.message.tool_calls:
             name = tool_call.function.name
             args = dict(tool_call.function.arguments or {})
-
-            # inject authenticated customer context when required (right now is always required, can change if some funcs dont need)
-            args["cust_id"] = custId
-
+            if name in TOOLS_REQUIRING_AUTH:
+                args["cust_id"] = custId
             result = dispatch_tool(name, args)
-
             messages.append({
                 "role": "tool",
                 "content": json.dumps(result),
                 "name": name,
             })
-
-        # ask the model again now that tool outputs are in the messages
         response = chat(model=MODEL, messages=messages)
 
     messages.append({"role": "assistant", "content": response.message.content})
