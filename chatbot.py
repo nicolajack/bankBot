@@ -102,6 +102,19 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
         "recentTransactions": recent_slim,
     }
 
+def get_customer_info(cust_id: str):
+    cust = CUSTOMERS.get(cust_id)
+    if not cust :
+        return {"error: Customer not found."}
+
+    return {
+        "name": cust.get("name"),
+        "address": cust.get("address"),
+        "phone": cust.get("phone"),
+        "email": cust.get("email"),
+        "dob": cust.get("dob")
+    }
+
 def _normalize_limit(limit, default=5, max_limit=20):
     if limit is None:
         return default
@@ -154,13 +167,32 @@ get_recent_transactions_tool = {
     }
 }
 
-TOOLS = [get_balance_tool, get_recent_transactions_tool]
+get_customer_info_tool = {
+    "type": "function",
+    "function": {
+        "name": "get_customer_info",
+        "description": "Get customer information for a given customer ID.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "cust_id": {
+                    "type": "string",
+                    "description": "The customer ID to get information for"
+                }
+            },
+            "required": ["cust_id"]
+        }
+    }
+}
 
-TOOLS_REQUIRING_AUTH = {"get_balance", "get_recent_transactions"}
+TOOLS = [get_balance_tool, get_recent_transactions_tool, get_customer_info_tool]
+
+TOOLS_REQUIRING_AUTH = {"get_balance", "get_recent_transactions", "get_customer_info"}
 
 TOOL_FUNCTIONS = {
     "get_balance": get_balance,
     "get_recent_transactions": get_recent_transactions,
+    "get_customer_info": get_customer_info,
 }
 
 def dispatch_tool(name, args):
