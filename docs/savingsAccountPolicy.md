@@ -1,80 +1,72 @@
-Account details and fees
- | 
-$8 or $0
+**First National Bank Savings Account Policy**
 
-For new accounts, we will waive the monthly maintenance fee for six months from account.
+**Introduction**
 
-$0 for each statement cycle that:
+At First National Bank, we offer a variety of savings accounts designed to help you achieve your financial goals. This policy outlines the terms and conditions of our savings 
+accounts, including interest rates, fees, and other important details.
 
-You maintain a minimum daily balance of $500 or more in your account
+**Account Types**
 
-OR
+1. **Basic Savings**: Our most popular savings account, ideal for everyday savings.
+2. **Premier Savings**: A higher-interest rate account for serious savers.
+3. **Youth Savings**: A special account designed for minors under 18 years old.
 
-You own a First National Special Account.
+**Interest Rates**
 
-OR
+1. Q: What is the interest rate for the Basic Savings account?
+A: The interest rate for the Basic Savings account is 0.10% APY (Annual Percentage Yield).
+2. Q: What is the interest rate for the Premier Savings account?
+A: The interest rate for the Premier Savings account is 1.50% APY.
+3. Q: Are interest rates subject to change?
+A: Yes, interest rates are subject to change without notice.
 
-An owner of this account is a member of the Preferred Rewards program.
+**Fees**
 
-Effective on or about May 26, 2026, the Preferred Rewards program will become FN Rewards, and an account owner will need to be enrolled in FN Rewards and qualify for the Preferred Plus, Preferred Honors, or Premier tiers to waive their monthly maintenance fee.
+1. Q: What fees apply to the Basic Savings account?
+A: There is a $5 monthly maintenance fee for the Basic Savings account if the balance falls below $100.
+2. Q: Can I avoid the monthly maintenance fee?
+A: Yes, you can avoid the monthly maintenance fee by maintaining a minimum balance of $100 or more in your account.
+3. Q: What other fees apply to savings accounts?
+A: We may impose other fees for overdrafts, NSF (Non-Sufficient Funds) transactions, and large withdrawals.
 
-OR
+**Transaction Limits**
 
-An owner of this account is under the age of 25.
+1. Q: Are there any transaction limits on the Basic Savings account?
+A: Yes, you are limited to six (6) withdrawals per month from your Basic Savings account.
+2. Q: Can I exceed the withdrawal limit?
+A: If you need to make more than six (6) withdrawals per month, you will be charged a fee of $5 per transaction.
 
-To view all fees and additional information on how to link eligible accounts, see the Personal Schedule of Fees (PDF). You can also refer to our Clarity Statement (PDF) or Deposit Agreement and Disclosures (PDF) for additional information
+**Minimum Balance Requirements**
 
-Rates
-Visit our bank account interest rates page
-More savings account options
-We also offer CDs and IRAs. Planning for college? Check out 529 College Savings Plans from Merrill.
+1. Q: What is the minimum balance requirement for the Premier Savings account?
+A: The minimum balance requirement for the Premier Savings account is $10,000.
+2. Q: If I maintain the minimum balance, can I make withdrawals at any time?
+A: No, you will need to provide at least 30 days' notice before making a withdrawal.
 
-Here’s what comes with your Advantage Savings account
-Select a benefit
- A trusted network
- Mobile check deposits
- Automatic Transfers
- Custom alerts
- Balance Connect® for overdraft protection
- FDIC insurance
-A trusted network
-We're here when you need us.
-Along with 24/7 access online, you can find us at thousands of ATMs and financial centers.
-Find a location near you
+**Account Closure**
 
+1. Q: How do I close my savings account with First National Bank?
+A: You can close your account by contacting our customer service department and providing written notice.
+2. Q: Are there any fees associated with closing an account?
+A: Yes, you will be charged a $25 closure fee if you close your account within the first six (6) months of opening.
 
-Just starting out?
-There is no monthly maintenance fee on our Advantage Safebalance Banking account if you're under age 25.
+**Tax-Related Information**
 
-Learn more about banking for students and young adults
+1. Q: How does interest earned on my savings account affect taxes?
+A: The interest earned on your savings account is considered taxable income and must be reported to the IRS.
+2. Q: Can I deduct interest earned from my savings account?
+A: No, you cannot deduct interest earned from your savings account on your tax return.
 
-More help managing money
-Short-Term Savings Calculator
-See how long it takes to save for the things you want and need.
+**Dispute Resolution**
 
-Try the Savings Goal Calculator
+1. Q: How do I dispute a fee or other issue with my savings account?
+A: If you believe you have been incorrectly charged or denied a service, please contact our customer service department and we will investigate your claim.
+2. Q: What is the timeline for resolving disputes?
+A: We strive to resolve disputes within [insert fictional timeframe].
 
-Articles and Advice
-Savings account or CD: Compare the benefits
-Learn ways to help make saving simple
-Get help planning for every stage of life
-Need more info about savings accounts?
+**Changes to Policy**
 
-Complete a saved application
-Personal Schedule of Fees (PDF)
-Deposit Agreement and Disclosures (PDF)
-Bank account interest rates
-How can I open an account?
-You can apply online for a checking account, savings account, CD or IRA. Simply select an account, enter your personal information, verify your information and choose features & funding options. You will receive an email once your application is received and a follow-up email telling you whether it has been approved, plus any next steps.
+1. Q: Can First National Bank change this policy at any time?
+A: Yes, we reserve the right to modify or update this policy without notice.
 
-Investment and insurance products:
-
-Are Not FDIC Insured
-Are Not Bank Guaranteed
-May Lose Value
-Are Not Deposits
-Are Not Insured by Any Federal Government Agency
-Are Not a Condition to Any Banking Service or Activity
-Online Banking Service Agreement
-
-Investing in securities involves risks, and there is always the potential of losing money when you invest in securities. You should review any planned financial transactions that may have tax or legal implications with your personal tax or legal advisor.
+Please note that this is a sample document and should not be used for actual banking transactions or decisions. All information provided is fictional and intended for demonstration purposes only.
