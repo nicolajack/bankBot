@@ -1,0 +1,17 @@
+[client]
+showErrorDetails = "none"
+
+[theme]
+# Primary accent color (used for primary buttons, active elements, and user chat bubbles)
+primaryColor = "#1e40af"
+
+# Main background color (a very subtle off-white/slate for a clean look)
+backgroundColor = "#f4f6f9"
+
+# Secondary background (used for the sidebar and assistant chat bubbles)
+secondaryBackgroundColor = "#ffffff"
+
+# Text color (dark slate, softer than pure black for readability)
+textColor = "#1e293b"
+
+font = "sans serif"

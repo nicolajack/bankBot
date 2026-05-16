@@ -81,7 +81,7 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
     if str(account.get("custID")) != str(cust_id):
         return {"error": "Account does not belong to the current customer."}
 
-    limit = max(1, min(int(limit) if limit else 5, 20))
+    limit = _normalize_limit(limit)
 
     matching = [txn for txn in TXNS.values() if str(txn.get("accountID")) == account_id]
     matching.sort(key=lambda t: (t.get("transactionDate") or ""), reverse=True)
@@ -101,6 +101,16 @@ def get_recent_transactions(account_id: str, cust_id: str, limit: int = 5):
         "accountType": account.get("accountType"),
         "recentTransactions": recent_slim,
     }
+
+def _normalize_limit(limit, default=5, max_limit=20):
+    if limit is None:
+        return default
+    if isinstance(limit, str) and limit.strip().lower() in {"", "null", "none", "nil"}:
+        return default
+    try:
+        return max(1, min(int(limit), max_limit))
+    except (ValueError, TypeError):
+        return default
 
 # tool definitions
 get_balance_tool = {
