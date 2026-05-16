@@ -1,6 +1,6 @@
 from pathlib import Path
-from olloma import chat
-from olloma import ChatResponse
+from ollama import chat
+from ollama import ChatResponse
 import json
 import chromadb
 from llama_index.core import VectorStoreIndex, Settings

@@ -1,5 +1,9 @@
+import json
 import streamlit as st
 import chatbot
+
+with open('mockData/customers.json', 'r') as f:
+    CUSTOMERS = json.load(f)
 
 # page settings (title, icon)
 st.set_page_config(
@@ -56,10 +60,24 @@ with st.sidebar:
         st.session_state.messages = chatbot.new_conversation()
     
     if st.session_state.cust_id:
-        st.success(f"✓ Logged in as: **{st.session_state.cust_id}**")
+        cust = CUSTOMERS.get(st.session_state.cust_id)
+        if cust:
+            # show customers name w/ profile card style
+            st.markdown(
+                f"""
+                <div style="padding: 15px; border-radius: 8px; background-color: #f1f5f9; border: 1px solid #e2e8f0; text-align: center; margin-bottom: 1rem;">
+                    <p style="margin: 0; color: #64748b; font-size: 0.9rem;">Welcome back,</p>
+                    <p style="margin: 0; color: #1e40af; font-size: 1.2rem; font-weight: 700;">{cust.get('name')}</p>
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+            st.success(f"✓ Logged in securely")
+        else:
+            st.error("❌ Customer ID not found.")
     else:
         st.warning("Please enter your ID to begin.")
-    
+
     st.markdown("---")
     st.markdown("#### 📚 About Finley")
     st.info(
