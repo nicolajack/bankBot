@@ -1,3 +1,4 @@
+from pathlib import Path
 from ollama import chat
 from ollama import ChatResponse
 import json
@@ -19,14 +20,24 @@ with open('mockData/customers.json', 'r') as f:
 with open('mockData/transactions.json', 'r') as f:
     TXNS = json.load(f)
 
-# RAG setup
-Settings.llm = Ollama(model=MODEL)
+# RAG setup (lazy-init query engine to avoid contacting Ollama at import time)
 Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+BASE_DIR = Path(__file__).parent
+chroma_client = chromadb.PersistentClient(path=str(BASE_DIR / "chroma_db"))
 chroma_collection = chroma_client.get_or_create_collection("rag_collection")
+print(chroma_collection.count())
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
 index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
-query_engine = index.as_query_engine(similarity_top_k=3)
+_query_engine = None
+
+
+def get_query_engine():
+    global _query_engine
+    if _query_engine is None:
+        # LLM is only required for response synthesis; set it when we actually need RAG
+        Settings.llm = Ollama(model=MODEL)
+        _query_engine = index.as_query_engine(similarity_top_k=3)
+    return _query_engine
 
 # keywords that suggest the user is asking about bank policy/info docs
 RAG_KEYWORDS = {"fee", "policy", "rate", "interest", "overdraft", "faq", "charge", "savings", "penalty", "limit", "rule", "requirement"}
@@ -37,8 +48,15 @@ def should_use_rag(text: str) -> bool:
 
 def get_rag_context(user_input: str) -> str:
     """Query the RAG pipeline and return retrieved context as a string."""
-    result = query_engine.query(user_input)  # synchronous, not aquery
-    return str(result).strip()
+    try:
+        qe = get_query_engine()
+        result = qe.query(user_input)  # synchronous, not aquery
+        return str(result).strip()
+    except ConnectionError:
+        # Ollama not reachable; fall back to no-context
+        return ""
+    except Exception:
+        return ""
 
 
 # tools
@@ -154,42 +172,37 @@ that affect users' financial well-being without their input. Refuse off-topic re
 Communication: Be empathetic, concise, and easy to understand. Never return raw JSON to the user.
 If you need information to call a tool, ask the user for it before proceeding."""
 
-messages = [
-    {"role": "system", "content": SYSTEM_PROMPT},
-    {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue."},
-]
-print("Finley: Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue.")
-print('\nType "quit" to end the chat.\n')
 
-# auth loop
-custId = ""
-while not custId:
-    userInput = input("Enter your customer ID: ").strip()
-    if userInput.lower() in ("quit", "exit", ""):
-        print("Have a nice day!")
-        exit()
-    if userInput in CUSTOMERS:
-        custId = userInput
-        print("Welcome!\n")
+def new_conversation() -> list[dict]:
+    """Create a fresh messages list suitable for Ollama chat."""
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Enter your Customer ID in the sidebar to get started."},
+    ]
+
+
+def respond(messages: list[dict], user_input: str, *, cust_id: str | None = None) -> tuple[str, list[dict]]:
+    """Handle one user turn and return (assistant_text, updated_messages)."""
+    user_input = (user_input or "").strip()
+
+    # add optional retrieved context
+    if should_use_rag(user_input):
+        context = get_rag_context(user_input)
+        if context:
+            user_msg = f"Context from bank documents:\n{context}\n\nUser question: {user_input}"
+        else:
+            user_msg = user_input
     else:
-        print("Customer not found, please try again.\n")
+        user_msg = user_input
 
-# chat loop
-while True:
-    userInput = input("User: ").strip()
-    if userInput.lower() in ("quit", "exit", ""):
-        print("Have a nice day!")
-        break
+    messages.append({"role": "user", "content": user_msg})
 
-    # only hit RAG if the message looks policy/info related
-    if should_use_rag(userInput):
-        context = get_rag_context(userInput)
-        userMsg = f"Context from bank documents:\n{context}\n\nUser question: {userInput}"
-    else:
-        userMsg = userInput
-
-    messages.append({"role": "user", "content": userMsg})
-    response: ChatResponse = chat(model=MODEL, messages=messages, tools=TOOLS)
+    try:
+        response: ChatResponse = chat(model=MODEL, messages=messages, tools=TOOLS)
+    except ConnectionError:
+        assistant_text = "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+        messages.append({"role": "assistant", "content": assistant_text})
+        return assistant_text, messages
 
     if response.message.tool_calls:
         messages.append({
@@ -197,18 +210,68 @@ while True:
             "content": response.message.content,
             "tool_calls": response.message.tool_calls,
         })
+
         for tool_call in response.message.tool_calls:
             name = tool_call.function.name
             args = dict(tool_call.function.arguments or {})
+
             if name in TOOLS_REQUIRING_AUTH:
-                args["cust_id"] = custId
-            result = dispatch_tool(name, args)
+                if not cust_id:
+                    tool_result = {"error": "Missing customer ID. Please authenticate first."}
+                else:
+                    args["cust_id"] = cust_id
+                    tool_result = dispatch_tool(name, args)
+            else:
+                tool_result = dispatch_tool(name, args)
+
             messages.append({
                 "role": "tool",
-                "content": json.dumps(result),
+                "content": json.dumps(tool_result),
                 "name": name,
             })
-        response = chat(model=MODEL, messages=messages)
+
+        try:
+            response = chat(model=MODEL, messages=messages)
+        except ConnectionError:
+            assistant_text = "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+            messages.append({"role": "assistant", "content": assistant_text})
+            return assistant_text, messages
 
     messages.append({"role": "assistant", "content": response.message.content})
-    print("Finley:", response.message.content)
+    return response.message.content, messages
+
+
+def main() -> None:
+    messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue."},
+    ]
+    print("Finley: Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue.")
+    print('\nType "quit" to end the chat.\n')
+
+    # auth loop
+    cust_id = ""
+    while not cust_id:
+        user_input = input("Enter your customer ID: ").strip()
+        if user_input.lower() in ("quit", "exit", ""):
+            print("Have a nice day!")
+            return
+        if user_input in CUSTOMERS:
+            cust_id = user_input
+            print("Welcome!\n")
+        else:
+            print("Customer not found, please try again.\n")
+
+    # chat loop
+    while True:
+        user_input = input("User: ").strip()
+        if user_input.lower() in ("quit", "exit", ""):
+            print("Have a nice day!")
+            break
+
+        assistant_text, messages = respond(messages, user_input, cust_id=cust_id)
+        print("Finley:", assistant_text)
+
+
+if __name__ == "__main__":
+    main()

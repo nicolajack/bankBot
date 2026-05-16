@@ -22,9 +22,18 @@ docs = [
 Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 # set up chroma
-chroma_client = chromadb.PersistentClient(path="./chroma_db")
+# IMPORTANT: persist in the project root so both embed.py and chatbot.py use the same DB
+BASE_DIR = Path(__file__).resolve().parents[1]  # .../bankBot
+chroma_path = BASE_DIR / "chroma_db"
+chroma_client = chromadb.PersistentClient(path=str(chroma_path))
 chroma_collection = chroma_client.get_or_create_collection("rag_collection")
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
 
 # index handles chunking and embedding
-index = VectorStoreIndex.from_documents(docs, vector_store=vector_store)
+# NOTE: build an index from the existing vector store, then insert docs into it.
+index = VectorStoreIndex.from_vector_store(vector_store=vector_store)
+for doc in docs:
+    index.insert(doc)
+
+print("Chroma persist dir:", chroma_path)
+print("Chroma docs after ingest:", chroma_collection.count())
