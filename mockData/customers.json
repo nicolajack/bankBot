@@ -1,0 +1,82 @@
+{
+    "0": {
+        "name": "Lisa Cobb",
+        "address": "4169 Michael Forest\nWellston, MD 55678",
+        "email": "qpeters@example.net",
+        "phone": "479.856.4467x86789",
+        "dob": "1997-06-04",
+        "custID": 0
+    },
+    "1": {
+        "name": "Patrick Clarke",
+        "address": "95752 Diaz Grove Apt. 475\nNew Melanie, GU 90821",
+        "email": "washingtonjordan@example.com",
+        "phone": "(662)232-3365",
+        "dob": "1958-07-05",
+        "custID": 1
+    },
+    "2": {
+        "name": "Luis Turner",
+        "address": "402 Arnold Lights\nWest Marilyn, ME 04835",
+        "email": "davidjoseph@example.net",
+        "phone": "(977)416-7290x39921",
+        "dob": "1945-07-26",
+        "custID": 2
+    },
+    "3": {
+        "name": "Gabriella Johnson",
+        "address": "USNS Spears\nFPO AP 53161",
+        "email": "kingcindy@example.com",
+        "phone": "523-969-3289",
+        "dob": "1971-12-12",
+        "custID": 3
+    },
+    "4": {
+        "name": "Emily Hampton",
+        "address": "27068 Raymond Curve\nFloydview, NY 29290",
+        "email": "marcus75@example.org",
+        "phone": "(748)676-5308",
+        "dob": "1946-03-16",
+        "custID": 4
+    },
+    "5": {
+        "name": "Nathaniel Simpson",
+        "address": "PSC 5079, Box 2235\nAPO AP 58473",
+        "email": "julie17@example.com",
+        "phone": "(900)329-0379x400",
+        "dob": "1951-02-10",
+        "custID": 5
+    },
+    "6": {
+        "name": "Brian Copeland",
+        "address": "48363 Gibson Groves Apt. 742\nKatherineton, MP 96219",
+        "email": "deborah37@example.com",
+        "phone": "001-969-837-9230",
+        "dob": "2020-04-01",
+        "custID": 6
+    },
+    "7": {
+        "name": "Gregory Smith",
+        "address": "7408 Brittany Hills\nMichaelside, NC 10770",
+        "email": "phunter@example.org",
+        "phone": "650-804-0043x32822",
+        "dob": "1921-05-06",
+        "custID": 7
+    },
+    "8": {
+        "name": "Linda Figueroa",
+        "address": "Unit 7765 Box 5936\nDPO AE 54451",
+        "email": "david31@example.org",
+        "phone": "717-867-4957x791",
+        "dob": "1956-03-14",
+        "custID": 8
+    },
+    "9": {
+        "name": "Shawn Patrick",
+        "address": "7437 Michael Canyon Suite 624\nJasonhaven, OR 15410",
+        "email": "eashley@example.org",
+        "phone": "+1-587-883-9035x729",
+        "dob": "1986-11-02",
+        "custID": 9
+    }
+}

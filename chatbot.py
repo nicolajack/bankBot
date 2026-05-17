@@ -20,6 +20,15 @@ with open('mockData/customers.json', 'r') as f:
 with open('mockData/transactions.json', 'r') as f:
     TXNS = json.load(f)
 
+def get_customer_accounts(cust_id: str):
+    """Returns all accounts belonging to a given customer ID."""
+    user_accounts = [
+        {"account_id": acc_id, "accountType": acc.get("accountType"), "balance": acc.get("balance")}
+        for acc_id, acc in ACCOUNTS.items()
+        if str(acc.get("custID")) == str(cust_id)
+    ]
+    return user_accounts
+
 # RAG setup (lazy-init query engine to avoid contacting Ollama at import time)
 Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 BASE_DIR = Path(__file__).parent
@@ -57,7 +66,6 @@ def get_rag_context(user_input: str) -> str:
         return ""
     except Exception:
         return ""
-
 
 # tools
 def get_balance(account_id: str, cust_id: str, **kwargs):
@@ -214,44 +222,62 @@ def dispatch_tool(name, args):
     except Exception as e:
         return {"error": f"Failed to execute {name}: {str(e)}"}
 
-SYSTEM_PROMPT = """You are an AI assistant that works for "First National Bank." Your name is Finley.
+SYSTEM_PROMPT_TEMPLATE = """You are Finley, a helpful AI assistant that works for \"First National Bank\".
 Your purpose is to provide personalized and secure financial assistance to users of the banking application.
+
+You are already authenticated.
+- Customer ID: {cust_id}
+- Selected Account ID: {account_id}
+
+When the user asks about "this account" or "my account", they mean Account ID {account_id}.
 
 Scope: Answer user queries on banking topics such as account management, transactions, and payment schedules.
 Provide recommendations for budgeting and savings. Assist users with basic banking issues.
 
 Limits: Do not share sensitive information that could compromise security. Refrain from making decisions
 that affect users' financial well-being without their input. Refuse off-topic requests politely.
-If the user asks for account details but you do not have access to their customer ID via your tools, politely ask them to authenticate using the sidebar.
 
 Communication: Be empathetic, concise, and easy to understand. Never return raw JSON to the user. Do not wrap your response in markdown code blocks (e.g. ```).
-If you need information to call a tool, ask the user for it before proceeding.
 
-Tools and Context: You have access to exactly THREE tools: get_balance, get_recent_transactions, and get_customer_info. 
-NEVER hallucinate or invent new tools. If you cannot answer a question using these three tools, or if the question is about policies, fees, FAQs, or general bank information, simply provide a direct text response using your general knowledge and any context text already provided in the user's message. DO NOT try to call a tool for this (e.g., do not call 'get_context_from_bank_documents' or 'get_fees').
+Tools and Context: You have access to exactly THREE tools: get_balance, get_recent_transactions, and get_customer_info.
+- Always call tools when needed to answer account-specific questions.
+- Never claim you lack the customer ID or account ID; they are always available.
+- If a tool requires an account_id and the user doesn't specify one, use {account_id}.
+
+If the question is about policies, fees, FAQs, or general bank information, provide a direct text response using your general knowledge and any retrieved context.
 
 Formatting: When displaying transaction history, always format the data as a clean Markdown table. Never display pure JSON to the user."""
 
 
-def new_conversation() -> list[dict]:
+def new_conversation(cust_id: str = "", account_id: str = "") -> list[dict]:
     """Create a fresh messages list suitable for Ollama chat."""
+    system_prompt = SYSTEM_PROMPT_TEMPLATE.format(cust_id=cust_id, account_id=account_id)
     return [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Enter your Customer ID in the sidebar to get started."},
+        {"role": "system", "content": system_prompt},
+        {
+            "role": "assistant",
+            "content": "Hello! I'm Finley, your First National Bank assistant. How can I help you today?",
+        },
     ]
 
 
-def respond(messages: list[dict], user_input: str, *, cust_id: str | None = None) -> tuple[str, list[dict]]:
+def respond(messages: list, user_input: str, cust_id: str = "", account_id: str = None, **kwargs):
     """Handle one user turn and return (assistant_text, updated_messages)."""
     user_input = (user_input or "").strip()
+
+    # Ensure the first system message always reflects the current sidebar context.
+    if messages and messages[0].get("role") == "system":
+        messages[0]["content"] = SYSTEM_PROMPT_TEMPLATE.format(
+            cust_id=str(cust_id), account_id=str(account_id)
+        )
 
     # add optional retrieved context
     if should_use_rag(user_input):
         context = get_rag_context(user_input)
         if context:
             messages.append({
-                "role": "system", 
-                "content": f"Context from bank documents to help answer the user's next question:\n{context}"
+                "role": "system",
+                "content": f"Context from bank documents to help answer the user's next question:\n{context}",
             })
 
     messages.append({"role": "user", "content": user_input})
@@ -259,40 +285,45 @@ def respond(messages: list[dict], user_input: str, *, cust_id: str | None = None
     try:
         response: ChatResponse = chat(model=MODEL, messages=messages, tools=TOOLS)
     except ConnectionError:
-        assistant_text = "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+        assistant_text = (
+            "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+        )
         messages.append({"role": "assistant", "content": assistant_text})
         return assistant_text, messages
 
     if response.message.tool_calls:
-        messages.append({
-            "role": "assistant",
-            "content": response.message.content,
-            "tool_calls": response.message.tool_calls,
-        })
+        messages.append(
+            {
+                "role": "assistant",
+                "content": response.message.content,
+                "tool_calls": response.message.tool_calls,
+            }
+        )
 
         for tool_call in response.message.tool_calls:
             name = tool_call.function.name
             args = dict(tool_call.function.arguments or {})
 
-            if name in TOOLS_REQUIRING_AUTH:
-                if not cust_id:
-                    tool_result = {"error": "Missing customer ID. Please authenticate first."}
-                else:
-                    args["cust_id"] = cust_id
-                    tool_result = dispatch_tool(name, args)
-            else:
-                tool_result = dispatch_tool(name, args)
+            args["cust_id"] = str(cust_id)
+            if name in {"get_balance", "get_recent_transactions"}:
+                args.setdefault("account_id", str(account_id))
 
-            messages.append({
-                "role": "tool",
-                "content": json.dumps(tool_result),
-                "name": name,
-            })
+            tool_result = dispatch_tool(name, args)
+
+            messages.append(
+                {
+                    "role": "tool",
+                    "content": json.dumps(tool_result),
+                    "name": name,
+                }
+            )
 
         try:
             response = chat(model=MODEL, messages=messages)
         except ConnectionError:
-            assistant_text = "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+            assistant_text = (
+                "I can't reach the local Ollama server right now. Please make sure Ollama is installed and running, then try again."
+            )
             messages.append({"role": "assistant", "content": assistant_text})
             return assistant_text, messages
 
@@ -302,8 +333,11 @@ def respond(messages: list[dict], user_input: str, *, cust_id: str | None = None
 
 def main() -> None:
     messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "assistant", "content": "Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue."},
+        {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE.format(cust_id="", account_id="")},
+        {
+            "role": "assistant",
+            "content": "Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue.",
+        },
     ]
     print("Finley: Hello! I'm Finley, your First National Bank assistant. Please enter your customer ID to continue.")
     print('\nType "quit" to end the chat.\n')

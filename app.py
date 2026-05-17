@@ -44,6 +44,9 @@ st.markdown('<p class="bank-subtitle">Your First National Bank AI Assistant</p>'
 if "cust_id" not in st.session_state:
     st.session_state.cust_id = ""
 
+if "selected_account" not in st.session_state:
+    st.session_state.selected_account = None
+
 # sidebar
 with st.sidebar:
     st.markdown("### 🏦 First National Bank")
@@ -72,7 +75,28 @@ with st.sidebar:
                 """, 
                 unsafe_allow_html=True
             )
-            st.success(f"✓ Logged in securely")
+
+            st.markdown('#### 💳 Your Accounts')
+            accounts = chatbot.get_customer_accounts(cust_id=st.session_state.cust_id)
+            if accounts:
+                for acc in accounts:
+                    acc_id = acc["account_id"]
+                    acc_type = acc["accountType"]
+                    
+                    is_selected = st.session_state.selected_account == acc_id
+                    button_label = f"{'✓ ' if is_selected else ''}{acc_type} Account #{acc_id}"
+                    button_style = "primary" if is_selected else "secondary"
+
+                    if st.button(
+                        button_label,
+                        key=f"account_{acc_id}",
+                        use_container_width=True,
+                        type=button_style
+                    ):
+                        st.session_state.selected_account = acc_id
+                        st.rerun()
+            else:
+                st.warning("No accounts found for this customer.")
         else:
             st.error("❌ Customer ID not found.")
     else:
@@ -119,6 +143,9 @@ if prompt := st.chat_input("Ask Finley a question (e.g., 'What is my balance?').
     if not st.session_state.cust_id.strip():
         with st.chat_message("assistant", avatar=":material/account_balance:"):
             st.warning("⚠️ Please enter your Customer ID in the secure sidebar menu to continue.")
+    elif not st.session_state.selected_account:
+        with st.chat_message("assistant", avatar=":material/account_balance:"):
+            st.warning("⚠️ Please select an account in the secure sidebar menu to continue.")
     else:
         # display user message immediately
         with st.chat_message("user", avatar=":material/sentiment_excited:"):
@@ -131,7 +158,8 @@ if prompt := st.chat_input("Ask Finley a question (e.g., 'What is my balance?').
                     st.session_state.messages,
                     prompt,
                     cust_id=st.session_state.cust_id.strip(),
+                    account_id=st.session_state.selected_account,
                 )
             
-        # gorce re-render to show chat history including new response
+        # force re-render to show chat history including new response
         st.rerun()
