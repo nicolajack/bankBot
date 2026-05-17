@@ -1,26 +1,26 @@
-**First National Bank FAQ**
+**Bank of Gotham FAQ**
 
 **General Information**
 
-1. Q: What is First National Bank?
-A: First National Bank is a reputable financial institution dedicated to providing exceptional banking services to individuals, businesses, and organizations.
-2. Q: Is First National Bank a real bank?
-A: No, First National Bank is a fictional bank created for demonstration purposes only.
-3. Q: Where is the headquarters of First National Bank located?
+1. Q: What is Bank of Gotham?
+A: Bank of Gotham is a reputable financial institution dedicated to providing exceptional banking services to individuals, businesses, and organizations.
+2. Q: Is Bank of Gotham a real bank?
+A: No, Bank of Gotham is a fictional bank created for demonstration purposes only.
+3. Q: Where is the headquarters of Bank of Gotham located?
 A: Our global headquarters is located in [insert fictional city], USA.
 
 **Account Management**
 
-1. Q: How do I open an account with First National Bank?
+1. Q: How do I open an account with Bank of Gotham?
 A: To open an account, simply visit our website, click on "Open an Account," and follow the prompts to provide required information.
-2. Q: What types of accounts does First National Bank offer?
+2. Q: What types of accounts does Bank of Gotham offer?
 A: We offer personal checking, savings, credit cards, mortgages, and business banking services.
 3. Q: How do I access my account online or through the mobile app?
 A: You can access your account online or through our mobile app using your username and password.
 
 **Security**
 
-1. Q: Is my personal information secure with First National Bank?
+1. Q: Is my personal information secure with Bank of Gotham?
 A: Yes, we take data security seriously and implement robust measures to protect your information.
 2. Q: How do I know if my account has been compromised?
 A: You will receive email notifications and alerts from us if any suspicious activity is detected on your account.
@@ -34,14 +34,14 @@ A: We strive to respond to all inquiries within [insert fictional response time 
 
 **Branches and ATMs**
 
-1. Q: Where are First National Bank branches located?
+1. Q: Where are Bank of Gotham branches located?
 A: Our branches are strategically located throughout [insert fictional country/region].
 2. Q: How do I find an ATM location near me?
 A: You can use our ATM Locator tool on our website or mobile app to find a nearby ATM.
 
 **Online Services**
 
-1. Q: Can I pay bills online through First National Bank's website?
+1. Q: Can I pay bills online through Bank of Gotham's website?
 A: Yes, you can pay bills and manage your account online.
 2. Q: Do I need to log in to access online banking services?
 A: Yes, you will need to log in with your username and password.

@@ -1,8 +1,8 @@
-**First National Bank Fee Schedule**
+**Bank of Gotham Fee Schedule**
 
 **Overview**
 
-At First National Bank, we strive to provide our customers with competitive rates and services while maintaining a fair and transparent fee structure.
+At Bank of Gotham, we strive to provide our customers with competitive rates and services while maintaining a fair and transparent fee structure.
 
 **Fees**
 

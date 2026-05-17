@@ -7,7 +7,7 @@ with open('mockData/customers.json', 'r') as f:
 
 # page settings (title, icon)
 st.set_page_config(
-    page_title="Finley - First National Bank",
+    page_title="Finley - Bank of Gotham",
     page_icon=":material/savings:",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -38,7 +38,7 @@ st.markdown("""
 
 # header
 st.markdown('<h1 class="bank-header">🏦 Finley</h1>', unsafe_allow_html=True)
-st.markdown('<p class="bank-subtitle">Your First National Bank AI Assistant</p>', unsafe_allow_html=True)
+st.markdown('<p class="bank-subtitle">Your Bank of Gotham AI Assistant</p>', unsafe_allow_html=True)
 
 # simple auth: store customer id in session
 if "cust_id" not in st.session_state:
@@ -49,7 +49,7 @@ if "selected_account" not in st.session_state:
 
 # sidebar
 with st.sidebar:
-    st.markdown("### 🏦 First National Bank")
+    st.markdown("### 🏦 Bank of Gotham")
     st.markdown("---")
     st.markdown("#### 🔐 Authentication")
     new_id = st.text_input(
@@ -115,7 +115,7 @@ with st.sidebar:
     st.markdown("<br><br><br>", unsafe_allow_html=True)
     st.markdown(
         "<p style='text-align: center; color: #94a3b8; font-size: 0.8rem;'>"
-        "© 2026 First National Bank<br>Secure Session</p>",
+        "© 2026 Bank of Gotham<br>Secure Session</p>",
         unsafe_allow_html=True
     )
 

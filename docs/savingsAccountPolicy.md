@@ -1,8 +1,8 @@
-**First National Bank Savings Account Policy**
+**Bank of Gotham Savings Account Policy**
 
 **Introduction**
 
-At First National Bank, we offer a variety of savings accounts designed to help you achieve your financial goals. This policy outlines the terms and conditions of our savings 
+At Bank of Gotham, we offer a variety of savings accounts designed to help you achieve your financial goals. This policy outlines the terms and conditions of our savings 
 accounts, including interest rates, fees, and other important details.
 
 **Account Types**
@@ -45,7 +45,7 @@ A: No, you will need to provide at least 30 days' notice before making a withdra
 
 **Account Closure**
 
-1. Q: How do I close my savings account with First National Bank?
+1. Q: How do I close my savings account with Bank of Gotham?
 A: You can close your account by contacting our customer service department and providing written notice.
 2. Q: Are there any fees associated with closing an account?
 A: Yes, you will be charged a $25 closure fee if you close your account within the first six (6) months of opening.
@@ -66,7 +66,7 @@ A: We strive to resolve disputes within [insert fictional timeframe].
 
 **Changes to Policy**
 
-1. Q: Can First National Bank change this policy at any time?
+1. Q: Can Bank of Gotham change this policy at any time?
 A: Yes, we reserve the right to modify or update this policy without notice.
 
 Please note that this is a sample document and should not be used for actual banking transactions or decisions. All information provided is fictional and intended for demonstration purposes only.

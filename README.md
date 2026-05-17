@@ -1,6 +1,6 @@
 # Finley - AI-Powered Banking Assistant
 
-An intelligent chatbot assistant for "First National Bank" that helps customers manage their accounts, check balances, view transactions, and get answers to banking policy questions.
+An intelligent chatbot assistant for "Bank of Gotham" that helps customers manage their accounts, check balances, view transactions, and get answers to banking policy questions.
 
 ## Project Overview
 
