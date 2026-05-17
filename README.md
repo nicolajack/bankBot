@@ -1,10 +1,10 @@
-# Finley - AI-Powered Banking Assistant
+# Gordon - AI-Powered Banking Assistant
 
 An intelligent chatbot assistant for "Bank of Gotham" that helps customers manage their accounts, check balances, view transactions, and get answers to banking policy questions.
 
 ## Project Overview
 
-Finley is an AI-powered banking assistant built with cutting-edge technologies to provide a seamless customer experience. The chatbot leverages large language models (LLMs) and retrieval-augmented generation (RAG) to intelligently respond to customer inquiries about their accounts and banking policies.
+Gordon is an AI-powered banking assistant built with cutting-edge technologies to provide a seamless customer experience. The chatbot leverages large language models (LLMs) and retrieval-augmented generation (RAG) to intelligently respond to customer inquiries about their accounts and banking policies.
 
 ### Key Features
 
@@ -157,20 +157,20 @@ The app will open in your default web browser at `http://localhost:8501`
 #### Checking Account Balance
 ```
 You: What's my account balance?
-Finley: Your Savings account with Account ID 17 has a current balance of $59,279.26. How can I assist you further today?
+Gordon: Your Savings account with Account ID 17 has a current balance of $59,279.26. How can I assist you further today?
 ```
 
 #### Asking About Policies
 ```
 You: What are the overdraft fees?
-Finley: According to our policy, overdraft fees are $35 per occurrence. 
+Gordon: According to our policy, overdraft fees are $35 per occurrence. 
         We also offer overdraft protection...
 ```
 
 #### Viewing Transactions
 ```
 You: Show me my 3 most recent transactions
-Finley: Here are your 3 most recent transactions:
+Gordon: Here are your 3 most recent transactions:
         - 05/16/2026: Amazon - $45.99
         - 05/15/2026: Starbucks - $6.50
         - 05/14/2026: Costco - $120.30

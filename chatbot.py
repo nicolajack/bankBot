@@ -222,7 +222,7 @@ def dispatch_tool(name, args):
     except Exception as e:
         return {"error": f"Failed to execute {name}: {str(e)}"}
 
-SYSTEM_PROMPT_TEMPLATE = """You are Finley, a helpful AI assistant that works for \"Bank of Gotham\".
+SYSTEM_PROMPT_TEMPLATE = """You are Gordon, a helpful AI assistant that works for \"Bank of Gotham\".
 Your purpose is to provide personalized and secure financial assistance to users of the banking application.
 
 You are already authenticated.
@@ -256,7 +256,7 @@ def new_conversation(cust_id: str = "", account_id: str = "") -> list[dict]:
         {"role": "system", "content": system_prompt},
         {
             "role": "assistant",
-            "content": "Hello! I'm Finley, your Bank of Gotham assistant. How can I help you today?",
+            "content": "Hello! I'm Gordon, your Bank of Gotham assistant. How can I help you today?",
         },
     ]
 
@@ -336,10 +336,10 @@ def main() -> None:
         {"role": "system", "content": SYSTEM_PROMPT_TEMPLATE.format(cust_id="", account_id="")},
         {
             "role": "assistant",
-            "content": "Hello! I'm Finley, your Bank of Gotham assistant. Please enter your customer ID to continue.",
+            "content": "Hello! I'm Gordon, your Bank of Gotham assistant. Please enter your customer ID to continue.",
         },
     ]
-    print("Finley: Hello! I'm Finley, your Bank of Gotham assistant. Please enter your customer ID to continue.")
+    print("Gordon: Hello! I'm Gordon, your Bank of Gotham assistant. Please enter your customer ID to continue.")
     print('\nType "quit" to end the chat.\n')
 
     # auth loop
@@ -363,7 +363,7 @@ def main() -> None:
             break
 
         assistant_text, messages = respond(messages, user_input, cust_id=cust_id)
-        print("Finley:", assistant_text)
+        print("Gordon:", assistant_text)
 
 
 if __name__ == "__main__":

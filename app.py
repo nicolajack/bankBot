@@ -7,7 +7,7 @@ with open('mockData/customers.json', 'r') as f:
 
 # page settings (title, icon)
 st.set_page_config(
-    page_title="Finley - Bank of Gotham",
+    page_title="Gordon - Bank of Gotham",
     page_icon=":material/savings:",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -37,7 +37,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # header
-st.markdown('<h1 class="bank-header">🏦 Finley</h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="bank-header">🏦 Gordon</h1>', unsafe_allow_html=True)
 st.markdown('<p class="bank-subtitle">Your Bank of Gotham AI Assistant</p>', unsafe_allow_html=True)
 
 # simple auth: store customer id in session
@@ -103,9 +103,9 @@ with st.sidebar:
         st.warning("Please enter your ID to begin.")
 
     st.markdown("---")
-    st.markdown("#### 📚 About Finley")
+    st.markdown("#### 📚 About Gordon")
     st.info(
-        "Finley is an AI-powered banking assistant that helps you manage your accounts, "
+        "Gordon is an AI-powered banking assistant that helps you manage your accounts, "
         "check transaction history, and answer questions about our banking policies."
     )
     # clear chat/start new convo (may need to edit look)
@@ -138,7 +138,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # react to user input
-if prompt := st.chat_input("Ask Finley a question (e.g., 'What is my balance?')..."):
+if prompt := st.chat_input("Ask Gordon a question (e.g., 'What is my balance?')..."):
     # if not authenticated, guide the user
     if not st.session_state.cust_id.strip():
         with st.chat_message("assistant", avatar=":material/account_balance:"):
@@ -153,7 +153,7 @@ if prompt := st.chat_input("Ask Finley a question (e.g., 'What is my balance?').
 
         # get response with spinner
         with st.chat_message("assistant", avatar=":material/account_balance:"):
-            with st.spinner("Finley is checking..."):
+            with st.spinner("Gordon is checking..."):
                 reply, st.session_state.messages = chatbot.respond(
                     st.session_state.messages,
                     prompt,
