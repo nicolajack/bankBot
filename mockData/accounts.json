@@ -1,122 +1,122 @@
 {
     "0": {
         "accountType": "Checking",
-        "openedDate": "2023-04-18",
-        "balance": "47188.54",
-        "custID": 7
+        "openedDate": "2024-12-17",
+        "balance": "48428.06",
+        "custID": 9
     },
     "1": {
-        "accountType": "Savings",
-        "openedDate": "1976-10-11",
-        "balance": "81056.14",
-        "custID": 5
+        "accountType": "Checking",
+        "openedDate": "2019-08-12",
+        "balance": "97226.16",
+        "custID": 8
     },
     "2": {
         "accountType": "Checking",
-        "openedDate": "1972-01-24",
-        "balance": "34017.27",
+        "openedDate": "1980-09-09",
+        "balance": "69492.01",
         "custID": 3
     },
     "3": {
-        "accountType": "Checking",
-        "openedDate": "2008-03-23",
-        "balance": "78389.22",
-        "custID": 3
+        "accountType": "Savings",
+        "openedDate": "1971-11-12",
+        "balance": "26594.84",
+        "custID": 1
     },
     "4": {
-        "accountType": "Savings",
-        "openedDate": "1995-01-20",
-        "balance": "34662.83",
-        "custID": 5
+        "accountType": "Checking",
+        "openedDate": "2014-08-28",
+        "balance": "99580.34",
+        "custID": 0
     },
     "5": {
         "accountType": "Savings",
-        "openedDate": "1972-09-05",
-        "balance": "12313.39",
-        "custID": 3
+        "openedDate": "2002-06-23",
+        "balance": "29312.59",
+        "custID": 2
     },
     "6": {
         "accountType": "Savings",
-        "openedDate": "1999-07-22",
-        "balance": "40565.32",
-        "custID": 6
-    },
-    "7": {
-        "accountType": "Savings",
-        "openedDate": "1974-05-28",
-        "balance": "81543.00",
-        "custID": 1
-    },
-    "8": {
-        "accountType": "Checking",
-        "openedDate": "1972-11-30",
-        "balance": "25987.88",
+        "openedDate": "1972-02-28",
+        "balance": "17333.10",
         "custID": 2
     },
-    "9": {
+    "7": {
+        "accountType": "Checking",
+        "openedDate": "1990-07-20",
+        "balance": "61232.05",
+        "custID": 8
+    },
+    "8": {
         "accountType": "Savings",
-        "openedDate": "2010-10-21",
-        "balance": "72050.02",
-        "custID": 3
+        "openedDate": "1973-09-05",
+        "balance": "71574.37",
+        "custID": 8
+    },
+    "9": {
+        "accountType": "Checking",
+        "openedDate": "2020-08-25",
+        "balance": "13024.96",
+        "custID": 8
     },
     "10": {
         "accountType": "Savings",
-        "openedDate": "1988-06-07",
-        "balance": "63846.40",
-        "custID": 8
+        "openedDate": "1985-08-14",
+        "balance": "54396.54",
+        "custID": 3
     },
     "11": {
         "accountType": "Checking",
-        "openedDate": "2014-01-18",
-        "balance": "59474.92",
-        "custID": 6
+        "openedDate": "2013-11-04",
+        "balance": "33616.67",
+        "custID": 2
     },
     "12": {
         "accountType": "Savings",
-        "openedDate": "1984-06-24",
-        "balance": "29351.24",
-        "custID": 6
+        "openedDate": "1984-01-24",
+        "balance": "93250.86",
+        "custID": 8
     },
     "13": {
         "accountType": "Savings",
-        "openedDate": "2018-04-07",
-        "balance": "92649.69",
-        "custID": 0
+        "openedDate": "2023-10-17",
+        "balance": "41555.38",
+        "custID": 9
     },
     "14": {
         "accountType": "Checking",
-        "openedDate": "1991-04-29",
-        "balance": "83827.41",
-        "custID": 6
-    },
-    "15": {
-        "accountType": "Checking",
-        "openedDate": "2025-08-19",
-        "balance": "45709.24",
+        "openedDate": "1977-10-31",
+        "balance": "59352.15",
         "custID": 9
     },
+    "15": {
+        "accountType": "Savings",
+        "openedDate": "2009-06-16",
+        "balance": "87826.90",
+        "custID": 2
+    },
     "16": {
-        "accountType": "Checking",
-        "openedDate": "1977-01-09",
-        "balance": "98139.34",
-        "custID": 4
+        "accountType": "Savings",
+        "openedDate": "1993-10-24",
+        "balance": "64085.80",
+        "custID": 7
     },
     "17": {
-        "accountType": "Savings",
-        "openedDate": "1971-07-26",
-        "balance": "16550.84",
+        "accountType": "Checking",
+        "openedDate": "2012-10-30",
+        "balance": "78067.86",
         "custID": 8
     },
     "18": {
         "accountType": "Checking",
-        "openedDate": "1971-06-24",
-        "balance": "41697.76",
+        "openedDate": "2025-02-01",
+        "balance": "71320.77",
         "custID": 9
     },
     "19": {
-        "accountType": "Savings",
-        "openedDate": "1999-05-04",
-        "balance": "82696.08",
-        "custID": 7
+        "accountType": "Checking",
+        "openedDate": "1987-08-25",
+        "balance": "17740.14",
+        "custID": 1
     }
 }

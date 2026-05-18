@@ -1,1052 +1,1052 @@
 {
     "0": {
-        "transactionDate": "2016-01-18",
-        "transactionType": "payment",
-        "merchantName": "Trader Joe's",
-        "transactionAmount": "41.28",
-        "accountID": 1
-    },
-    "1": {
-        "transactionDate": "2015-10-14",
-        "transactionType": "payment",
-        "merchantName": "Dunkin",
-        "transactionAmount": "23.56",
-        "accountID": 19
-    },
-    "2": {
-        "transactionDate": "1971-01-01",
-        "transactionType": "refund",
-        "merchantName": "Kroger",
-        "transactionAmount": "66.09",
-        "accountID": 8
-    },
-    "3": {
-        "transactionDate": "1992-06-16",
+        "transactionDate": "1970-07-14",
         "transactionType": "withdrawal",
-        "merchantName": "Costco",
-        "transactionAmount": "25.24",
-        "accountID": 14
-    },
-    "4": {
-        "transactionDate": "2009-04-06",
-        "transactionType": "refund",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "2.63",
-        "accountID": 16
-    },
-    "5": {
-        "transactionDate": "1979-07-11",
-        "transactionType": "refund",
-        "merchantName": "Verizon",
-        "transactionAmount": "4577.20",
-        "accountID": 10
-    },
-    "6": {
-        "transactionDate": "1990-04-28",
-        "transactionType": "deposit",
-        "merchantName": "AMC",
-        "transactionAmount": "64.34",
-        "accountID": 16
-    },
-    "7": {
-        "transactionDate": "1993-09-12",
-        "transactionType": "transfer",
-        "merchantName": "Walmart",
-        "transactionAmount": "7523.50",
-        "accountID": 2
-    },
-    "8": {
-        "transactionDate": "2009-11-12",
-        "transactionType": "payment",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "78.35",
-        "accountID": 17
-    },
-    "9": {
-        "transactionDate": "1972-05-05",
-        "transactionType": "deposit",
-        "merchantName": "Starbucks",
-        "transactionAmount": "2.02",
-        "accountID": 19
-    },
-    "10": {
-        "transactionDate": "2025-11-05",
-        "transactionType": "refund",
         "merchantName": "Pop Up Bagels",
-        "transactionAmount": "9.66",
-        "accountID": 14
-    },
-    "11": {
-        "transactionDate": "1999-07-26",
-        "transactionType": "refund",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "7.00",
-        "accountID": 10
-    },
-    "12": {
-        "transactionDate": "2004-06-10",
-        "transactionType": "payment",
-        "merchantName": "Trader Joe's",
-        "transactionAmount": "29.73",
-        "accountID": 4
-    },
-    "13": {
-        "transactionDate": "2009-02-11",
-        "transactionType": "refund",
-        "merchantName": "Verizon",
-        "transactionAmount": "9615.62",
-        "accountID": 10
-    },
-    "14": {
-        "transactionDate": "2026-02-07",
-        "transactionType": "withdrawal",
-        "merchantName": "Starbucks",
-        "transactionAmount": "91.44",
-        "accountID": 19
-    },
-    "15": {
-        "transactionDate": "1998-08-12",
-        "transactionType": "refund",
-        "merchantName": "Patreon",
-        "transactionAmount": "3.20",
-        "accountID": 18
-    },
-    "16": {
-        "transactionDate": "2000-09-09",
-        "transactionType": "transfer",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "958.71",
-        "accountID": 12
-    },
-    "17": {
-        "transactionDate": "2023-02-06",
-        "transactionType": "transfer",
-        "merchantName": "Amtrak",
-        "transactionAmount": "114.25",
-        "accountID": 2
-    },
-    "18": {
-        "transactionDate": "2007-09-25",
-        "transactionType": "deposit",
-        "merchantName": "Chipotle",
-        "transactionAmount": "987.69",
-        "accountID": 13
-    },
-    "19": {
-        "transactionDate": "2021-02-09",
-        "transactionType": "deposit",
-        "merchantName": "Home Depot",
-        "transactionAmount": "32.25",
-        "accountID": 13
-    },
-    "20": {
-        "transactionDate": "1996-12-27",
-        "transactionType": "transfer",
-        "merchantName": "McDonald's",
-        "transactionAmount": "4021.36",
-        "accountID": 16
-    },
-    "21": {
-        "transactionDate": "1999-07-29",
-        "transactionType": "deposit",
-        "merchantName": "Kroger",
-        "transactionAmount": "417.74",
-        "accountID": 5
-    },
-    "22": {
-        "transactionDate": "1978-06-22",
-        "transactionType": "withdrawal",
-        "merchantName": "Amazon",
-        "transactionAmount": "3.95",
-        "accountID": 4
-    },
-    "23": {
-        "transactionDate": "1981-04-14",
-        "transactionType": "refund",
-        "merchantName": "Amtrak",
-        "transactionAmount": "6.39",
-        "accountID": 7
-    },
-    "24": {
-        "transactionDate": "1984-05-29",
-        "transactionType": "refund",
-        "merchantName": "Kroger",
-        "transactionAmount": "309.74",
-        "accountID": 11
-    },
-    "25": {
-        "transactionDate": "1988-01-11",
-        "transactionType": "deposit",
-        "merchantName": "Amazon",
-        "transactionAmount": "1939.69",
-        "accountID": 16
-    },
-    "26": {
-        "transactionDate": "1977-01-06",
-        "transactionType": "payment",
-        "merchantName": "Walmart",
-        "transactionAmount": "7752.84",
-        "accountID": 10
-    },
-    "27": {
-        "transactionDate": "1982-02-13",
-        "transactionType": "transfer",
-        "merchantName": "Taco Bell",
-        "transactionAmount": "431.27",
-        "accountID": 19
-    },
-    "28": {
-        "transactionDate": "1985-12-28",
-        "transactionType": "withdrawal",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "2018.83",
-        "accountID": 3
-    },
-    "29": {
-        "transactionDate": "1985-09-29",
-        "transactionType": "withdrawal",
-        "merchantName": "Kroger",
-        "transactionAmount": "278.08",
-        "accountID": 8
-    },
-    "30": {
-        "transactionDate": "2010-07-23",
-        "transactionType": "deposit",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "19.17",
-        "accountID": 0
-    },
-    "31": {
-        "transactionDate": "2020-02-26",
-        "transactionType": "refund",
-        "merchantName": "Popmart",
-        "transactionAmount": "5.35",
-        "accountID": 17
-    },
-    "32": {
-        "transactionDate": "1971-02-23",
-        "transactionType": "transfer",
-        "merchantName": "Kroger",
-        "transactionAmount": "131.53",
-        "accountID": 11
-    },
-    "33": {
-        "transactionDate": "1973-12-19",
-        "transactionType": "refund",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "82.04",
+        "transactionAmount": "8833.71",
         "accountID": 15
     },
-    "34": {
-        "transactionDate": "2023-12-16",
+    "1": {
+        "transactionDate": "1975-06-22",
+        "transactionType": "refund",
+        "merchantName": "Apple",
+        "transactionAmount": "115.84",
+        "accountID": 6
+    },
+    "2": {
+        "transactionDate": "2003-01-14",
         "transactionType": "deposit",
-        "merchantName": "Chipotle",
-        "transactionAmount": "42.50",
-        "accountID": 14
+        "merchantName": "Dunkin",
+        "transactionAmount": "240.52",
+        "accountID": 11
     },
-    "35": {
-        "transactionDate": "2015-01-05",
-        "transactionType": "transfer",
-        "merchantName": "McDonald's",
-        "transactionAmount": "8959.54",
-        "accountID": 12
+    "3": {
+        "transactionDate": "1987-03-17",
+        "transactionType": "deposit",
+        "merchantName": "Verizon",
+        "transactionAmount": "31.23",
+        "accountID": 11
     },
-    "36": {
-        "transactionDate": "2009-03-29",
-        "transactionType": "payment",
-        "merchantName": "Nagomi Izakaya",
-        "transactionAmount": "1336.84",
-        "accountID": 17
-    },
-    "37": {
-        "transactionDate": "1970-08-02",
-        "transactionType": "transfer",
-        "merchantName": "Costco",
-        "transactionAmount": "5137.47",
+    "4": {
+        "transactionDate": "1976-05-07",
+        "transactionType": "refund",
+        "merchantName": "Ikea",
+        "transactionAmount": "437.79",
         "accountID": 4
     },
-    "38": {
-        "transactionDate": "1974-03-20",
+    "5": {
+        "transactionDate": "1974-05-16",
         "transactionType": "deposit",
-        "merchantName": "Patreon",
-        "transactionAmount": "4894.84",
+        "merchantName": "Apple",
+        "transactionAmount": "871.95",
+        "accountID": 14
+    },
+    "6": {
+        "transactionDate": "2009-10-25",
+        "transactionType": "transfer",
+        "merchantName": "McDonald's",
+        "transactionAmount": "6.96",
         "accountID": 17
     },
-    "39": {
-        "transactionDate": "1987-03-25",
+    "7": {
+        "transactionDate": "2017-09-25",
+        "transactionType": "withdrawal",
+        "merchantName": "Starbucks",
+        "transactionAmount": "324.15",
+        "accountID": 4
+    },
+    "8": {
+        "transactionDate": "1987-05-03",
+        "transactionType": "transfer",
+        "merchantName": "Apple",
+        "transactionAmount": "2.93",
+        "accountID": 16
+    },
+    "9": {
+        "transactionDate": "1996-03-24",
         "transactionType": "deposit",
-        "merchantName": "Chipotle",
-        "transactionAmount": "204.35",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "230.02",
+        "accountID": 15
+    },
+    "10": {
+        "transactionDate": "2016-01-08",
+        "transactionType": "transfer",
+        "merchantName": "Patreon",
+        "transactionAmount": "5.08",
         "accountID": 0
     },
-    "40": {
-        "transactionDate": "1994-05-18",
-        "transactionType": "deposit",
-        "merchantName": "AMC",
-        "transactionAmount": "1969.98",
-        "accountID": 18
+    "11": {
+        "transactionDate": "1994-02-02",
+        "transactionType": "withdrawal",
+        "merchantName": "Trader Joe's",
+        "transactionAmount": "7.28",
+        "accountID": 8
     },
-    "41": {
-        "transactionDate": "1994-02-01",
-        "transactionType": "refund",
-        "merchantName": "Dunkin",
-        "transactionAmount": "523.19",
-        "accountID": 17
-    },
-    "42": {
-        "transactionDate": "2000-11-04",
+    "12": {
+        "transactionDate": "1999-11-02",
         "transactionType": "payment",
         "merchantName": "Nagomi Izakaya",
-        "transactionAmount": "47.39",
+        "transactionAmount": "5.03",
+        "accountID": 9
+    },
+    "13": {
+        "transactionDate": "1971-07-28",
+        "transactionType": "transfer",
+        "merchantName": "Dunkin",
+        "transactionAmount": "105.85",
+        "accountID": 11
+    },
+    "14": {
+        "transactionDate": "2011-08-23",
+        "transactionType": "payment",
+        "merchantName": "Chipotle",
+        "transactionAmount": "42.03",
+        "accountID": 0
+    },
+    "15": {
+        "transactionDate": "2017-10-01",
+        "transactionType": "refund",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "5.75",
+        "accountID": 2
+    },
+    "16": {
+        "transactionDate": "1981-01-02",
+        "transactionType": "deposit",
+        "merchantName": "Cumberland Farms",
+        "transactionAmount": "2380.82",
+        "accountID": 8
+    },
+    "17": {
+        "transactionDate": "1987-03-03",
+        "transactionType": "refund",
+        "merchantName": "Chipotle",
+        "transactionAmount": "62.41",
+        "accountID": 18
+    },
+    "18": {
+        "transactionDate": "1989-03-01",
+        "transactionType": "refund",
+        "merchantName": "Nagomi Izakaya",
+        "transactionAmount": "5.89",
+        "accountID": 7
+    },
+    "19": {
+        "transactionDate": "2006-01-10",
+        "transactionType": "withdrawal",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "6.22",
+        "accountID": 6
+    },
+    "20": {
+        "transactionDate": "2017-03-18",
+        "transactionType": "transfer",
+        "merchantName": "Walmart",
+        "transactionAmount": "3.88",
+        "accountID": 7
+    },
+    "21": {
+        "transactionDate": "2021-02-02",
+        "transactionType": "deposit",
+        "merchantName": "Trader Joe's",
+        "transactionAmount": "276.88",
+        "accountID": 0
+    },
+    "22": {
+        "transactionDate": "1977-10-20",
+        "transactionType": "refund",
+        "merchantName": "CVS",
+        "transactionAmount": "3.95",
+        "accountID": 12
+    },
+    "23": {
+        "transactionDate": "1986-05-31",
+        "transactionType": "transfer",
+        "merchantName": "Patreon",
+        "transactionAmount": "6.04",
+        "accountID": 0
+    },
+    "24": {
+        "transactionDate": "1972-04-24",
+        "transactionType": "payment",
+        "merchantName": "Taco Bell",
+        "transactionAmount": "4.54",
         "accountID": 17
     },
-    "43": {
-        "transactionDate": "2004-09-13",
+    "25": {
+        "transactionDate": "2018-02-25",
+        "transactionType": "withdrawal",
+        "merchantName": "Apple",
+        "transactionAmount": "148.97",
+        "accountID": 12
+    },
+    "26": {
+        "transactionDate": "1983-08-07",
+        "transactionType": "transfer",
+        "merchantName": "AMC",
+        "transactionAmount": "73.36",
+        "accountID": 16
+    },
+    "27": {
+        "transactionDate": "1982-09-28",
+        "transactionType": "refund",
+        "merchantName": "Cumberland Farms",
+        "transactionAmount": "6768.16",
+        "accountID": 7
+    },
+    "28": {
+        "transactionDate": "1990-09-09",
+        "transactionType": "refund",
+        "merchantName": "McDonald's",
+        "transactionAmount": "22.39",
+        "accountID": 13
+    },
+    "29": {
+        "transactionDate": "1995-01-15",
         "transactionType": "deposit",
+        "merchantName": "Walmart",
+        "transactionAmount": "7.66",
+        "accountID": 18
+    },
+    "30": {
+        "transactionDate": "1977-09-16",
+        "transactionType": "transfer",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "27.34",
+        "accountID": 19
+    },
+    "31": {
+        "transactionDate": "2005-12-15",
+        "transactionType": "withdrawal",
+        "merchantName": "Ikea",
+        "transactionAmount": "993.40",
+        "accountID": 8
+    },
+    "32": {
+        "transactionDate": "1971-02-21",
+        "transactionType": "withdrawal",
+        "merchantName": "Nagomi Izakaya",
+        "transactionAmount": "893.38",
+        "accountID": 14
+    },
+    "33": {
+        "transactionDate": "1999-03-02",
+        "transactionType": "transfer",
         "merchantName": "Chipotle",
-        "transactionAmount": "1064.16",
+        "transactionAmount": "802.68",
+        "accountID": 7
+    },
+    "34": {
+        "transactionDate": "2008-06-11",
+        "transactionType": "payment",
+        "merchantName": "Applebee's",
+        "transactionAmount": "793.91",
+        "accountID": 9
+    },
+    "35": {
+        "transactionDate": "2003-07-08",
+        "transactionType": "withdrawal",
+        "merchantName": "Applebee's",
+        "transactionAmount": "85.72",
+        "accountID": 19
+    },
+    "36": {
+        "transactionDate": "2001-01-03",
+        "transactionType": "deposit",
+        "merchantName": "Amazon",
+        "transactionAmount": "890.11",
+        "accountID": 12
+    },
+    "37": {
+        "transactionDate": "1990-03-22",
+        "transactionType": "withdrawal",
+        "merchantName": "Nagomi Izakaya",
+        "transactionAmount": "9356.47",
+        "accountID": 7
+    },
+    "38": {
+        "transactionDate": "1973-03-01",
+        "transactionType": "transfer",
+        "merchantName": "Taco Bell",
+        "transactionAmount": "9.03",
+        "accountID": 5
+    },
+    "39": {
+        "transactionDate": "2017-04-24",
+        "transactionType": "payment",
+        "merchantName": "Target",
+        "transactionAmount": "4961.99",
+        "accountID": 17
+    },
+    "40": {
+        "transactionDate": "2004-06-27",
+        "transactionType": "transfer",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "276.66",
+        "accountID": 15
+    },
+    "41": {
+        "transactionDate": "2003-10-24",
+        "transactionType": "payment",
+        "merchantName": "McDonald's",
+        "transactionAmount": "914.06",
+        "accountID": 15
+    },
+    "42": {
+        "transactionDate": "2001-10-13",
+        "transactionType": "deposit",
+        "merchantName": "McDonald's",
+        "transactionAmount": "1532.71",
+        "accountID": 9
+    },
+    "43": {
+        "transactionDate": "1988-12-13",
+        "transactionType": "refund",
+        "merchantName": "Starbucks",
+        "transactionAmount": "350.64",
         "accountID": 9
     },
     "44": {
-        "transactionDate": "1995-07-01",
-        "transactionType": "payment",
-        "merchantName": "Applebee's",
-        "transactionAmount": "2627.10",
-        "accountID": 0
+        "transactionDate": "1979-02-14",
+        "transactionType": "withdrawal",
+        "merchantName": "Walgreens",
+        "transactionAmount": "4.18",
+        "accountID": 2
     },
     "45": {
-        "transactionDate": "2002-03-22",
+        "transactionDate": "1976-01-31",
         "transactionType": "refund",
-        "merchantName": "Nagomi Izakaya",
-        "transactionAmount": "29.46",
-        "accountID": 1
+        "merchantName": "AMC",
+        "transactionAmount": "6.15",
+        "accountID": 12
     },
     "46": {
-        "transactionDate": "1994-03-06",
-        "transactionType": "refund",
+        "transactionDate": "2014-01-21",
+        "transactionType": "payment",
         "merchantName": "Popmart",
-        "transactionAmount": "7.45",
-        "accountID": 15
+        "transactionAmount": "157.14",
+        "accountID": 0
     },
     "47": {
-        "transactionDate": "2000-01-03",
-        "transactionType": "payment",
-        "merchantName": "CVS",
-        "transactionAmount": "2068.28",
-        "accountID": 18
+        "transactionDate": "2022-06-05",
+        "transactionType": "withdrawal",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "4.21",
+        "accountID": 17
     },
     "48": {
-        "transactionDate": "2013-05-25",
+        "transactionDate": "1995-02-10",
         "transactionType": "withdrawal",
-        "merchantName": "Verizon",
-        "transactionAmount": "2279.72",
-        "accountID": 16
-    },
-    "49": {
-        "transactionDate": "1977-08-09",
-        "transactionType": "transfer",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "37.41",
-        "accountID": 10
-    },
-    "50": {
-        "transactionDate": "2020-03-06",
-        "transactionType": "transfer",
-        "merchantName": "Dunkin",
-        "transactionAmount": "21.93",
-        "accountID": 4
-    },
-    "51": {
-        "transactionDate": "2001-02-15",
-        "transactionType": "payment",
-        "merchantName": "AMC",
-        "transactionAmount": "7.24",
-        "accountID": 4
-    },
-    "52": {
-        "transactionDate": "1995-07-01",
-        "transactionType": "transfer",
-        "merchantName": "Walmart",
-        "transactionAmount": "72.01",
-        "accountID": 15
-    },
-    "53": {
-        "transactionDate": "2010-01-31",
-        "transactionType": "transfer",
-        "merchantName": "Ikea",
-        "transactionAmount": "189.59",
-        "accountID": 9
-    },
-    "54": {
-        "transactionDate": "1978-01-17",
-        "transactionType": "refund",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "38.06",
+        "merchantName": "Amtrak",
+        "transactionAmount": "80.93",
         "accountID": 5
     },
-    "55": {
-        "transactionDate": "1983-07-01",
+    "49": {
+        "transactionDate": "2015-12-17",
+        "transactionType": "refund",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "457.87",
+        "accountID": 4
+    },
+    "50": {
+        "transactionDate": "1987-03-18",
         "transactionType": "deposit",
-        "merchantName": "Patreon",
-        "transactionAmount": "70.51",
+        "merchantName": "Amtrak",
+        "transactionAmount": "26.98",
+        "accountID": 3
+    },
+    "51": {
+        "transactionDate": "1996-05-31",
+        "transactionType": "deposit",
+        "merchantName": "CVS",
+        "transactionAmount": "8.41",
+        "accountID": 19
+    },
+    "52": {
+        "transactionDate": "1983-04-02",
+        "transactionType": "deposit",
+        "merchantName": "Kroger",
+        "transactionAmount": "3.75",
+        "accountID": 17
+    },
+    "53": {
+        "transactionDate": "1992-04-25",
+        "transactionType": "refund",
+        "merchantName": "Target",
+        "transactionAmount": "254.58",
+        "accountID": 5
+    },
+    "54": {
+        "transactionDate": "1995-06-20",
+        "transactionType": "deposit",
+        "merchantName": "Costco",
+        "transactionAmount": "9744.65",
+        "accountID": 7
+    },
+    "55": {
+        "transactionDate": "2016-10-13",
+        "transactionType": "withdrawal",
+        "merchantName": "AMC",
+        "transactionAmount": "4335.49",
         "accountID": 0
     },
     "56": {
-        "transactionDate": "1985-04-20",
-        "transactionType": "deposit",
-        "merchantName": "Verizon",
-        "transactionAmount": "3900.57",
-        "accountID": 4
+        "transactionDate": "1992-05-20",
+        "transactionType": "withdrawal",
+        "merchantName": "McDonald's",
+        "transactionAmount": "3.73",
+        "accountID": 9
     },
     "57": {
-        "transactionDate": "1976-01-23",
+        "transactionDate": "1982-01-02",
         "transactionType": "transfer",
         "merchantName": "Verizon",
-        "transactionAmount": "9.77",
-        "accountID": 5
+        "transactionAmount": "71.97",
+        "accountID": 1
     },
     "58": {
-        "transactionDate": "1972-10-17",
-        "transactionType": "payment",
-        "merchantName": "Amazon",
-        "transactionAmount": "360.22",
-        "accountID": 2
+        "transactionDate": "1977-01-15",
+        "transactionType": "withdrawal",
+        "merchantName": "McDonald's",
+        "transactionAmount": "37.00",
+        "accountID": 11
     },
     "59": {
-        "transactionDate": "1981-02-10",
-        "transactionType": "payment",
-        "merchantName": "Starbucks",
-        "transactionAmount": "6.38",
-        "accountID": 10
+        "transactionDate": "2003-11-07",
+        "transactionType": "withdrawal",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "3.03",
+        "accountID": 8
     },
     "60": {
-        "transactionDate": "2025-09-12",
+        "transactionDate": "1994-09-02",
         "transactionType": "transfer",
-        "merchantName": "CVS",
-        "transactionAmount": "480.51",
-        "accountID": 4
+        "merchantName": "7-Eleven",
+        "transactionAmount": "2536.08",
+        "accountID": 10
     },
     "61": {
-        "transactionDate": "1979-01-17",
+        "transactionDate": "1972-08-06",
         "transactionType": "transfer",
-        "merchantName": "Nagomi Izakaya",
-        "transactionAmount": "247.07",
-        "accountID": 8
+        "merchantName": "Dunkin",
+        "transactionAmount": "853.70",
+        "accountID": 2
     },
     "62": {
-        "transactionDate": "2026-05-12",
-        "transactionType": "deposit",
-        "merchantName": "CVS",
-        "transactionAmount": "74.29",
-        "accountID": 4
+        "transactionDate": "2025-10-28",
+        "transactionType": "transfer",
+        "merchantName": "Cumberland Farms",
+        "transactionAmount": "5.65",
+        "accountID": 7
     },
     "63": {
-        "transactionDate": "1980-07-30",
-        "transactionType": "payment",
-        "merchantName": "Verizon",
-        "transactionAmount": "3.30",
-        "accountID": 8
+        "transactionDate": "1997-03-27",
+        "transactionType": "deposit",
+        "merchantName": "Chipotle",
+        "transactionAmount": "1349.24",
+        "accountID": 10
     },
     "64": {
-        "transactionDate": "2021-05-15",
-        "transactionType": "transfer",
-        "merchantName": "Ikea",
-        "transactionAmount": "3.92",
-        "accountID": 13
+        "transactionDate": "2000-10-17",
+        "transactionType": "refund",
+        "merchantName": "Popmart",
+        "transactionAmount": "5.38",
+        "accountID": 6
     },
     "65": {
-        "transactionDate": "2007-12-26",
-        "transactionType": "withdrawal",
-        "merchantName": "Ikea",
-        "transactionAmount": "92.80",
-        "accountID": 13
+        "transactionDate": "2014-08-08",
+        "transactionType": "transfer",
+        "merchantName": "Apple",
+        "transactionAmount": "6.41",
+        "accountID": 14
     },
     "66": {
-        "transactionDate": "2013-01-26",
-        "transactionType": "deposit",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "738.28",
+        "transactionDate": "2004-06-16",
+        "transactionType": "withdrawal",
+        "merchantName": "Costco",
+        "transactionAmount": "4.42",
         "accountID": 1
     },
     "67": {
-        "transactionDate": "2021-05-15",
-        "transactionType": "withdrawal",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "7514.81",
-        "accountID": 8
-    },
-    "68": {
-        "transactionDate": "2013-07-26",
-        "transactionType": "refund",
-        "merchantName": "AMC",
-        "transactionAmount": "961.87",
-        "accountID": 12
-    },
-    "69": {
-        "transactionDate": "1993-07-06",
-        "transactionType": "transfer",
-        "merchantName": "Trader Joe's",
-        "transactionAmount": "9373.08",
-        "accountID": 11
-    },
-    "70": {
-        "transactionDate": "2022-04-21",
-        "transactionType": "withdrawal",
-        "merchantName": "Chipotle",
-        "transactionAmount": "2.00",
-        "accountID": 13
-    },
-    "71": {
-        "transactionDate": "1998-09-22",
-        "transactionType": "payment",
-        "merchantName": "AMC",
-        "transactionAmount": "961.55",
-        "accountID": 15
-    },
-    "72": {
-        "transactionDate": "2020-09-18",
-        "transactionType": "deposit",
-        "merchantName": "CVS",
-        "transactionAmount": "81.69",
-        "accountID": 7
-    },
-    "73": {
-        "transactionDate": "1984-11-15",
-        "transactionType": "refund",
-        "merchantName": "Starbucks",
-        "transactionAmount": "6899.11",
-        "accountID": 12
-    },
-    "74": {
-        "transactionDate": "2016-01-05",
-        "transactionType": "withdrawal",
-        "merchantName": "CVS",
-        "transactionAmount": "1.84",
-        "accountID": 8
-    },
-    "75": {
-        "transactionDate": "2019-06-03",
-        "transactionType": "transfer",
-        "merchantName": "Verizon",
-        "transactionAmount": "7575.88",
-        "accountID": 14
-    },
-    "76": {
-        "transactionDate": "2018-06-01",
-        "transactionType": "refund",
-        "merchantName": "Home Depot",
-        "transactionAmount": "61.67",
-        "accountID": 4
-    },
-    "77": {
-        "transactionDate": "2001-11-15",
-        "transactionType": "refund",
-        "merchantName": "Dunkin",
-        "transactionAmount": "82.93",
-        "accountID": 1
-    },
-    "78": {
-        "transactionDate": "2001-10-14",
-        "transactionType": "transfer",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "3.47",
-        "accountID": 0
-    },
-    "79": {
-        "transactionDate": "1987-12-17",
-        "transactionType": "payment",
-        "merchantName": "Walgreens",
-        "transactionAmount": "47.34",
-        "accountID": 1
-    },
-    "80": {
-        "transactionDate": "1983-10-23",
-        "transactionType": "transfer",
-        "merchantName": "Dunkin",
-        "transactionAmount": "4.47",
-        "accountID": 5
-    },
-    "81": {
-        "transactionDate": "2001-03-06",
-        "transactionType": "payment",
-        "merchantName": "Apple",
-        "transactionAmount": "108.40",
-        "accountID": 0
-    },
-    "82": {
-        "transactionDate": "2017-02-21",
-        "transactionType": "transfer",
-        "merchantName": "McDonald's",
-        "transactionAmount": "7012.51",
-        "accountID": 19
-    },
-    "83": {
-        "transactionDate": "1993-12-17",
-        "transactionType": "payment",
-        "merchantName": "Nagomi Izakaya",
-        "transactionAmount": "86.73",
-        "accountID": 3
-    },
-    "84": {
-        "transactionDate": "2013-01-05",
-        "transactionType": "withdrawal",
-        "merchantName": "Verizon",
-        "transactionAmount": "4.25",
-        "accountID": 8
-    },
-    "85": {
-        "transactionDate": "2023-04-30",
-        "transactionType": "payment",
-        "merchantName": "Apple",
-        "transactionAmount": "47.11",
-        "accountID": 19
-    },
-    "86": {
-        "transactionDate": "1977-08-19",
-        "transactionType": "deposit",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "496.23",
-        "accountID": 16
-    },
-    "87": {
-        "transactionDate": "1995-04-04",
-        "transactionType": "payment",
-        "merchantName": "Trader Joe's",
-        "transactionAmount": "419.02",
-        "accountID": 14
-    },
-    "88": {
-        "transactionDate": "2006-02-07",
-        "transactionType": "withdrawal",
-        "merchantName": "Starbucks",
-        "transactionAmount": "8.49",
-        "accountID": 3
-    },
-    "89": {
-        "transactionDate": "2016-03-08",
-        "transactionType": "refund",
-        "merchantName": "Walgreens",
-        "transactionAmount": "1.72",
-        "accountID": 16
-    },
-    "90": {
-        "transactionDate": "1977-05-08",
-        "transactionType": "transfer",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "645.67",
-        "accountID": 10
-    },
-    "91": {
-        "transactionDate": "2015-01-03",
-        "transactionType": "withdrawal",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "1934.22",
-        "accountID": 16
-    },
-    "92": {
-        "transactionDate": "1998-12-01",
-        "transactionType": "payment",
-        "merchantName": "McDonald's",
-        "transactionAmount": "877.53",
-        "accountID": 2
-    },
-    "93": {
-        "transactionDate": "1986-07-14",
-        "transactionType": "refund",
-        "merchantName": "AMC",
-        "transactionAmount": "265.69",
-        "accountID": 16
-    },
-    "94": {
-        "transactionDate": "1995-09-01",
-        "transactionType": "withdrawal",
-        "merchantName": "Amazon",
-        "transactionAmount": "4951.40",
-        "accountID": 1
-    },
-    "95": {
-        "transactionDate": "1980-07-04",
-        "transactionType": "refund",
-        "merchantName": "Chipotle",
-        "transactionAmount": "4.31",
-        "accountID": 14
-    },
-    "96": {
-        "transactionDate": "1976-06-16",
-        "transactionType": "refund",
-        "merchantName": "Apple",
-        "transactionAmount": "55.93",
-        "accountID": 14
-    },
-    "97": {
-        "transactionDate": "2014-10-10",
-        "transactionType": "payment",
-        "merchantName": "Home Depot",
-        "transactionAmount": "3.89",
-        "accountID": 14
-    },
-    "98": {
-        "transactionDate": "2022-06-25",
-        "transactionType": "refund",
-        "merchantName": "Applebee's",
-        "transactionAmount": "254.47",
-        "accountID": 11
-    },
-    "99": {
-        "transactionDate": "1979-04-15",
-        "transactionType": "refund",
-        "merchantName": "Apple",
-        "transactionAmount": "26.13",
-        "accountID": 12
-    },
-    "100": {
-        "transactionDate": "2020-02-06",
+        "transactionDate": "1997-10-12",
         "transactionType": "payment",
         "merchantName": "Starbucks",
-        "transactionAmount": "144.67",
-        "accountID": 5
-    },
-    "101": {
-        "transactionDate": "1971-10-25",
-        "transactionType": "refund",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "8037.66",
-        "accountID": 19
-    },
-    "102": {
-        "transactionDate": "1986-07-25",
-        "transactionType": "refund",
-        "merchantName": "Starbucks",
-        "transactionAmount": "379.92",
-        "accountID": 0
-    },
-    "103": {
-        "transactionDate": "1974-03-04",
-        "transactionType": "payment",
-        "merchantName": "Target",
-        "transactionAmount": "92.78",
-        "accountID": 9
-    },
-    "104": {
-        "transactionDate": "1987-01-19",
-        "transactionType": "transfer",
-        "merchantName": "Chipotle",
-        "transactionAmount": "4717.81",
-        "accountID": 4
-    },
-    "105": {
-        "transactionDate": "1972-04-05",
-        "transactionType": "withdrawal",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "979.65",
-        "accountID": 18
-    },
-    "106": {
-        "transactionDate": "2014-10-29",
-        "transactionType": "deposit",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "2121.28",
-        "accountID": 11
-    },
-    "107": {
-        "transactionDate": "1988-10-31",
-        "transactionType": "withdrawal",
-        "merchantName": "Popmart",
-        "transactionAmount": "2.63",
-        "accountID": 2
-    },
-    "108": {
-        "transactionDate": "2015-07-03",
-        "transactionType": "refund",
-        "merchantName": "Home Depot",
-        "transactionAmount": "6659.82",
-        "accountID": 17
-    },
-    "109": {
-        "transactionDate": "2023-11-09",
-        "transactionType": "withdrawal",
-        "merchantName": "Popmart",
-        "transactionAmount": "81.13",
-        "accountID": 1
-    },
-    "110": {
-        "transactionDate": "1973-11-06",
-        "transactionType": "withdrawal",
-        "merchantName": "Amtrak",
-        "transactionAmount": "1.53",
-        "accountID": 8
-    },
-    "111": {
-        "transactionDate": "1996-06-13",
-        "transactionType": "deposit",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "767.53",
-        "accountID": 13
-    },
-    "112": {
-        "transactionDate": "1975-03-07",
-        "transactionType": "refund",
-        "merchantName": "Costco",
-        "transactionAmount": "9.83",
-        "accountID": 7
-    },
-    "113": {
-        "transactionDate": "2025-05-13",
-        "transactionType": "withdrawal",
-        "merchantName": "Kroger",
-        "transactionAmount": "242.28",
-        "accountID": 4
-    },
-    "114": {
-        "transactionDate": "1991-04-12",
-        "transactionType": "transfer",
-        "merchantName": "Costco",
-        "transactionAmount": "6965.76",
-        "accountID": 3
-    },
-    "115": {
-        "transactionDate": "1985-07-15",
-        "transactionType": "deposit",
-        "merchantName": "Apple",
-        "transactionAmount": "9.42",
-        "accountID": 17
-    },
-    "116": {
-        "transactionDate": "2018-01-19",
-        "transactionType": "payment",
-        "merchantName": "McDonald's",
-        "transactionAmount": "9.55",
-        "accountID": 17
-    },
-    "117": {
-        "transactionDate": "2000-10-29",
-        "transactionType": "transfer",
-        "merchantName": "Walgreens",
-        "transactionAmount": "34.77",
-        "accountID": 16
-    },
-    "118": {
-        "transactionDate": "2001-09-26",
-        "transactionType": "withdrawal",
-        "merchantName": "Popmart",
-        "transactionAmount": "783.44",
-        "accountID": 2
-    },
-    "119": {
-        "transactionDate": "2013-10-22",
-        "transactionType": "payment",
-        "merchantName": "Home Depot",
-        "transactionAmount": "71.71",
-        "accountID": 10
-    },
-    "120": {
-        "transactionDate": "1994-02-12",
-        "transactionType": "withdrawal",
-        "merchantName": "Dunkin",
-        "transactionAmount": "9.61",
-        "accountID": 2
-    },
-    "121": {
-        "transactionDate": "1999-05-24",
-        "transactionType": "withdrawal",
-        "merchantName": "Applebee's",
-        "transactionAmount": "39.05",
-        "accountID": 14
-    },
-    "122": {
-        "transactionDate": "1979-03-18",
-        "transactionType": "payment",
-        "merchantName": "AMC",
-        "transactionAmount": "1561.28",
-        "accountID": 7
-    },
-    "123": {
-        "transactionDate": "1998-11-16",
-        "transactionType": "payment",
-        "merchantName": "Taco Bell",
-        "transactionAmount": "2380.77",
-        "accountID": 1
-    },
-    "124": {
-        "transactionDate": "1974-08-02",
-        "transactionType": "refund",
-        "merchantName": "Amtrak",
-        "transactionAmount": "5.05",
-        "accountID": 14
-    },
-    "125": {
-        "transactionDate": "1994-08-19",
-        "transactionType": "transfer",
-        "merchantName": "AMC",
-        "transactionAmount": "800.74",
-        "accountID": 10
-    },
-    "126": {
-        "transactionDate": "2009-01-07",
-        "transactionType": "deposit",
-        "merchantName": "Costco",
-        "transactionAmount": "632.64",
-        "accountID": 1
-    },
-    "127": {
-        "transactionDate": "2001-07-04",
-        "transactionType": "deposit",
-        "merchantName": "Starbucks",
-        "transactionAmount": "4280.89",
-        "accountID": 0
-    },
-    "128": {
-        "transactionDate": "1994-03-16",
-        "transactionType": "transfer",
-        "merchantName": "CVS",
-        "transactionAmount": "3.84",
-        "accountID": 19
-    },
-    "129": {
-        "transactionDate": "2006-06-10",
-        "transactionType": "transfer",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "5.31",
-        "accountID": 19
-    },
-    "130": {
-        "transactionDate": "1992-10-24",
-        "transactionType": "refund",
-        "merchantName": "Target",
-        "transactionAmount": "7.74",
-        "accountID": 1
-    },
-    "131": {
-        "transactionDate": "1998-09-27",
-        "transactionType": "deposit",
-        "merchantName": "Popmart",
-        "transactionAmount": "2678.22",
-        "accountID": 17
-    },
-    "132": {
-        "transactionDate": "2011-01-08",
-        "transactionType": "transfer",
-        "merchantName": "Applebee's",
-        "transactionAmount": "645.16",
-        "accountID": 1
-    },
-    "133": {
-        "transactionDate": "1997-04-13",
-        "transactionType": "withdrawal",
-        "merchantName": "Chipotle",
-        "transactionAmount": "5.21",
+        "transactionAmount": "4.07",
         "accountID": 6
     },
-    "134": {
-        "transactionDate": "2005-02-23",
+    "68": {
+        "transactionDate": "2008-06-24",
+        "transactionType": "transfer",
+        "merchantName": "Dunkin",
+        "transactionAmount": "29.82",
+        "accountID": 2
+    },
+    "69": {
+        "transactionDate": "1979-03-04",
+        "transactionType": "deposit",
+        "merchantName": "Walmart",
+        "transactionAmount": "5.38",
+        "accountID": 19
+    },
+    "70": {
+        "transactionDate": "2012-09-24",
+        "transactionType": "withdrawal",
+        "merchantName": "Apple",
+        "transactionAmount": "56.78",
+        "accountID": 12
+    },
+    "71": {
+        "transactionDate": "2023-04-20",
+        "transactionType": "withdrawal",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "212.20",
+        "accountID": 0
+    },
+    "72": {
+        "transactionDate": "2012-05-27",
+        "transactionType": "deposit",
+        "merchantName": "Trader Joe's",
+        "transactionAmount": "30.65",
+        "accountID": 18
+    },
+    "73": {
+        "transactionDate": "1982-12-05",
+        "transactionType": "transfer",
+        "merchantName": "Chipotle",
+        "transactionAmount": "1595.14",
+        "accountID": 5
+    },
+    "74": {
+        "transactionDate": "1999-10-05",
+        "transactionType": "refund",
+        "merchantName": "Patreon",
+        "transactionAmount": "4311.91",
+        "accountID": 9
+    },
+    "75": {
+        "transactionDate": "1977-10-14",
+        "transactionType": "payment",
+        "merchantName": "Amazon",
+        "transactionAmount": "336.12",
+        "accountID": 4
+    },
+    "76": {
+        "transactionDate": "1994-07-15",
+        "transactionType": "transfer",
+        "merchantName": "Amazon",
+        "transactionAmount": "486.01",
+        "accountID": 1
+    },
+    "77": {
+        "transactionDate": "2000-12-11",
+        "transactionType": "transfer",
+        "merchantName": "Popmart",
+        "transactionAmount": "800.85",
+        "accountID": 0
+    },
+    "78": {
+        "transactionDate": "1975-01-09",
+        "transactionType": "payment",
+        "merchantName": "Patreon",
+        "transactionAmount": "456.68",
+        "accountID": 3
+    },
+    "79": {
+        "transactionDate": "1982-04-10",
+        "transactionType": "transfer",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "77.30",
+        "accountID": 5
+    },
+    "80": {
+        "transactionDate": "2017-06-09",
+        "transactionType": "refund",
+        "merchantName": "Kroger",
+        "transactionAmount": "344.28",
+        "accountID": 16
+    },
+    "81": {
+        "transactionDate": "2007-06-24",
+        "transactionType": "transfer",
+        "merchantName": "Starbucks",
+        "transactionAmount": "4240.63",
+        "accountID": 8
+    },
+    "82": {
+        "transactionDate": "2020-07-01",
+        "transactionType": "withdrawal",
+        "merchantName": "Starbucks",
+        "transactionAmount": "2.22",
+        "accountID": 8
+    },
+    "83": {
+        "transactionDate": "2001-07-31",
+        "transactionType": "deposit",
+        "merchantName": "Target",
+        "transactionAmount": "8917.75",
+        "accountID": 14
+    },
+    "84": {
+        "transactionDate": "2009-04-19",
+        "transactionType": "refund",
+        "merchantName": "Starbucks",
+        "transactionAmount": "59.97",
+        "accountID": 17
+    },
+    "85": {
+        "transactionDate": "1979-06-23",
+        "transactionType": "refund",
+        "merchantName": "Amazon",
+        "transactionAmount": "91.04",
+        "accountID": 12
+    },
+    "86": {
+        "transactionDate": "1978-01-21",
+        "transactionType": "withdrawal",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "674.53",
+        "accountID": 6
+    },
+    "87": {
+        "transactionDate": "1978-03-11",
+        "transactionType": "deposit",
+        "merchantName": "Starbucks",
+        "transactionAmount": "396.36",
+        "accountID": 17
+    },
+    "88": {
+        "transactionDate": "2005-09-26",
+        "transactionType": "withdrawal",
+        "merchantName": "Cumberland Farms",
+        "transactionAmount": "54.30",
+        "accountID": 6
+    },
+    "89": {
+        "transactionDate": "2014-09-26",
+        "transactionType": "deposit",
+        "merchantName": "Walgreens",
+        "transactionAmount": "9531.52",
+        "accountID": 17
+    },
+    "90": {
+        "transactionDate": "2012-12-09",
         "transactionType": "deposit",
         "merchantName": "Ikea",
-        "transactionAmount": "9.37",
+        "transactionAmount": "968.38",
+        "accountID": 11
+    },
+    "91": {
+        "transactionDate": "2013-11-17",
+        "transactionType": "refund",
+        "merchantName": "Taco Bell",
+        "transactionAmount": "5.06",
+        "accountID": 3
+    },
+    "92": {
+        "transactionDate": "1970-01-16",
+        "transactionType": "withdrawal",
+        "merchantName": "CVS",
+        "transactionAmount": "3244.58",
+        "accountID": 16
+    },
+    "93": {
+        "transactionDate": "1998-10-29",
+        "transactionType": "transfer",
+        "merchantName": "McDonald's",
+        "transactionAmount": "123.88",
+        "accountID": 11
+    },
+    "94": {
+        "transactionDate": "1998-05-05",
+        "transactionType": "transfer",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "92.62",
+        "accountID": 12
+    },
+    "95": {
+        "transactionDate": "2017-12-07",
+        "transactionType": "deposit",
+        "merchantName": "Amtrak",
+        "transactionAmount": "8746.44",
+        "accountID": 15
+    },
+    "96": {
+        "transactionDate": "1998-12-01",
+        "transactionType": "payment",
+        "merchantName": "AMC",
+        "transactionAmount": "1.33",
+        "accountID": 8
+    },
+    "97": {
+        "transactionDate": "2010-11-18",
+        "transactionType": "transfer",
+        "merchantName": "Starbucks",
+        "transactionAmount": "7.53",
+        "accountID": 3
+    },
+    "98": {
+        "transactionDate": "1980-04-21",
+        "transactionType": "deposit",
+        "merchantName": "Chipotle",
+        "transactionAmount": "9403.74",
+        "accountID": 9
+    },
+    "99": {
+        "transactionDate": "2006-05-28",
+        "transactionType": "refund",
+        "merchantName": "Walgreens",
+        "transactionAmount": "49.18",
+        "accountID": 5
+    },
+    "100": {
+        "transactionDate": "2017-04-01",
+        "transactionType": "refund",
+        "merchantName": "Walmart",
+        "transactionAmount": "24.09",
+        "accountID": 0
+    },
+    "101": {
+        "transactionDate": "1997-04-02",
+        "transactionType": "transfer",
+        "merchantName": "Walmart",
+        "transactionAmount": "472.94",
+        "accountID": 16
+    },
+    "102": {
+        "transactionDate": "1998-03-25",
+        "transactionType": "deposit",
+        "merchantName": "Walmart",
+        "transactionAmount": "90.36",
+        "accountID": 12
+    },
+    "103": {
+        "transactionDate": "2011-01-21",
+        "transactionType": "refund",
+        "merchantName": "Applebee's",
+        "transactionAmount": "4.12",
+        "accountID": 11
+    },
+    "104": {
+        "transactionDate": "1984-02-08",
+        "transactionType": "refund",
+        "merchantName": "Patreon",
+        "transactionAmount": "6462.71",
+        "accountID": 0
+    },
+    "105": {
+        "transactionDate": "1973-07-07",
+        "transactionType": "deposit",
+        "merchantName": "Target",
+        "transactionAmount": "527.21",
+        "accountID": 2
+    },
+    "106": {
+        "transactionDate": "1997-08-04",
+        "transactionType": "transfer",
+        "merchantName": "Applebee's",
+        "transactionAmount": "7226.70",
+        "accountID": 19
+    },
+    "107": {
+        "transactionDate": "1979-03-26",
+        "transactionType": "refund",
+        "merchantName": "7-Eleven",
+        "transactionAmount": "6232.94",
+        "accountID": 18
+    },
+    "108": {
+        "transactionDate": "1974-12-26",
+        "transactionType": "refund",
+        "merchantName": "Chipotle",
+        "transactionAmount": "4.45",
+        "accountID": 11
+    },
+    "109": {
+        "transactionDate": "2017-05-14",
+        "transactionType": "withdrawal",
+        "merchantName": "Target",
+        "transactionAmount": "687.69",
+        "accountID": 18
+    },
+    "110": {
+        "transactionDate": "2026-05-16",
+        "transactionType": "transfer",
+        "merchantName": "Chipotle",
+        "transactionAmount": "21.83",
+        "accountID": 19
+    },
+    "111": {
+        "transactionDate": "1988-03-12",
+        "transactionType": "refund",
+        "merchantName": "Popmart",
+        "transactionAmount": "607.80",
+        "accountID": 8
+    },
+    "112": {
+        "transactionDate": "2002-11-03",
+        "transactionType": "deposit",
+        "merchantName": "Walmart",
+        "transactionAmount": "45.51",
+        "accountID": 2
+    },
+    "113": {
+        "transactionDate": "2020-08-26",
+        "transactionType": "refund",
+        "merchantName": "Patreon",
+        "transactionAmount": "134.35",
+        "accountID": 18
+    },
+    "114": {
+        "transactionDate": "2003-04-30",
+        "transactionType": "refund",
+        "merchantName": "Apple",
+        "transactionAmount": "782.84",
+        "accountID": 0
+    },
+    "115": {
+        "transactionDate": "2006-01-16",
+        "transactionType": "withdrawal",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "1.99",
+        "accountID": 12
+    },
+    "116": {
+        "transactionDate": "1988-07-25",
+        "transactionType": "transfer",
+        "merchantName": "Apple",
+        "transactionAmount": "8.63",
+        "accountID": 18
+    },
+    "117": {
+        "transactionDate": "1988-01-09",
+        "transactionType": "withdrawal",
+        "merchantName": "McDonald's",
+        "transactionAmount": "3217.50",
+        "accountID": 1
+    },
+    "118": {
+        "transactionDate": "1978-09-22",
+        "transactionType": "refund",
+        "merchantName": "CVS",
+        "transactionAmount": "304.18",
+        "accountID": 9
+    },
+    "119": {
+        "transactionDate": "2012-03-22",
+        "transactionType": "transfer",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "191.11",
+        "accountID": 6
+    },
+    "120": {
+        "transactionDate": "2004-11-05",
+        "transactionType": "withdrawal",
+        "merchantName": "Amtrak",
+        "transactionAmount": "1.02",
+        "accountID": 14
+    },
+    "121": {
+        "transactionDate": "1987-12-06",
+        "transactionType": "refund",
+        "merchantName": "Costco",
+        "transactionAmount": "2379.15",
+        "accountID": 1
+    },
+    "122": {
+        "transactionDate": "1971-10-25",
+        "transactionType": "payment",
+        "merchantName": "McDonald's",
+        "transactionAmount": "773.60",
+        "accountID": 6
+    },
+    "123": {
+        "transactionDate": "1974-02-03",
+        "transactionType": "transfer",
+        "merchantName": "CVS",
+        "transactionAmount": "343.06",
+        "accountID": 12
+    },
+    "124": {
+        "transactionDate": "2025-10-24",
+        "transactionType": "deposit",
+        "merchantName": "Dunkin",
+        "transactionAmount": "6.03",
+        "accountID": 0
+    },
+    "125": {
+        "transactionDate": "1979-12-24",
+        "transactionType": "payment",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "91.30",
+        "accountID": 3
+    },
+    "126": {
+        "transactionDate": "2026-04-05",
+        "transactionType": "refund",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "6.13",
+        "accountID": 5
+    },
+    "127": {
+        "transactionDate": "1981-02-01",
+        "transactionType": "transfer",
+        "merchantName": "Kroger",
+        "transactionAmount": "112.95",
+        "accountID": 17
+    },
+    "128": {
+        "transactionDate": "1973-06-27",
+        "transactionType": "payment",
+        "merchantName": "Walmart",
+        "transactionAmount": "5300.66",
+        "accountID": 13
+    },
+    "129": {
+        "transactionDate": "2014-05-07",
+        "transactionType": "deposit",
+        "merchantName": "Nagomi Izakaya",
+        "transactionAmount": "109.56",
+        "accountID": 4
+    },
+    "130": {
+        "transactionDate": "2022-10-12",
+        "transactionType": "deposit",
+        "merchantName": "Pop Up Bagels",
+        "transactionAmount": "230.67",
+        "accountID": 16
+    },
+    "131": {
+        "transactionDate": "2000-12-29",
+        "transactionType": "deposit",
+        "merchantName": "Kroger",
+        "transactionAmount": "51.95",
+        "accountID": 12
+    },
+    "132": {
+        "transactionDate": "1983-05-02",
+        "transactionType": "withdrawal",
+        "merchantName": "Dunkin",
+        "transactionAmount": "668.06",
+        "accountID": 12
+    },
+    "133": {
+        "transactionDate": "2004-01-27",
+        "transactionType": "deposit",
+        "merchantName": "Costco",
+        "transactionAmount": "3.81",
+        "accountID": 0
+    },
+    "134": {
+        "transactionDate": "2023-07-04",
+        "transactionType": "deposit",
+        "merchantName": "Chipotle",
+        "transactionAmount": "134.20",
         "accountID": 5
     },
     "135": {
-        "transactionDate": "2015-06-13",
-        "transactionType": "withdrawal",
-        "merchantName": "Chipotle",
-        "transactionAmount": "4889.62",
-        "accountID": 14
-    },
-    "136": {
-        "transactionDate": "1988-12-01",
-        "transactionType": "transfer",
-        "merchantName": "Trader Joe's",
-        "transactionAmount": "4850.72",
-        "accountID": 10
-    },
-    "137": {
-        "transactionDate": "2025-01-26",
-        "transactionType": "withdrawal",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "507.31",
-        "accountID": 10
-    },
-    "138": {
-        "transactionDate": "1980-06-18",
+        "transactionDate": "2022-11-07",
         "transactionType": "refund",
-        "merchantName": "Walgreens",
-        "transactionAmount": "1.34",
+        "merchantName": "Home Depot",
+        "transactionAmount": "6862.56",
         "accountID": 7
     },
+    "136": {
+        "transactionDate": "1993-02-07",
+        "transactionType": "withdrawal",
+        "merchantName": "Walgreens",
+        "transactionAmount": "541.28",
+        "accountID": 4
+    },
+    "137": {
+        "transactionDate": "1982-05-26",
+        "transactionType": "deposit",
+        "merchantName": "Trader Joe's",
+        "transactionAmount": "94.05",
+        "accountID": 3
+    },
+    "138": {
+        "transactionDate": "1981-11-09",
+        "transactionType": "withdrawal",
+        "merchantName": "Patreon",
+        "transactionAmount": "3.93",
+        "accountID": 11
+    },
     "139": {
-        "transactionDate": "1980-05-15",
-        "transactionType": "payment",
-        "merchantName": "Cumberland Farms",
-        "transactionAmount": "62.72",
+        "transactionDate": "1991-11-20",
+        "transactionType": "deposit",
+        "merchantName": "Amtrak",
+        "transactionAmount": "1815.52",
         "accountID": 13
     },
     "140": {
-        "transactionDate": "1970-04-30",
-        "transactionType": "withdrawal",
-        "merchantName": "Walmart",
-        "transactionAmount": "2.15",
-        "accountID": 4
-    },
-    "141": {
-        "transactionDate": "1991-08-28",
-        "transactionType": "withdrawal",
-        "merchantName": "Popmart",
-        "transactionAmount": "11.51",
-        "accountID": 14
-    },
-    "142": {
-        "transactionDate": "2005-08-30",
-        "transactionType": "transfer",
-        "merchantName": "Popmart",
-        "transactionAmount": "980.72",
-        "accountID": 7
-    },
-    "143": {
-        "transactionDate": "2006-07-25",
-        "transactionType": "withdrawal",
-        "merchantName": "AMC",
-        "transactionAmount": "597.64",
+        "transactionDate": "1988-05-31",
+        "transactionType": "deposit",
+        "merchantName": "Kroger",
+        "transactionAmount": "6.30",
         "accountID": 0
     },
-    "144": {
-        "transactionDate": "2005-01-24",
+    "141": {
+        "transactionDate": "2003-04-04",
         "transactionType": "refund",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "5.70",
-        "accountID": 19
+        "merchantName": "Chipotle",
+        "transactionAmount": "791.50",
+        "accountID": 13
     },
-    "145": {
-        "transactionDate": "1977-05-25",
+    "142": {
+        "transactionDate": "2003-08-06",
         "transactionType": "refund",
-        "merchantName": "Pop Up Bagels",
-        "transactionAmount": "59.21",
-        "accountID": 7
-    },
-    "146": {
-        "transactionDate": "1986-05-08",
-        "transactionType": "transfer",
-        "merchantName": "7-Eleven",
-        "transactionAmount": "73.15",
+        "merchantName": "Nagomi Izakaya",
+        "transactionAmount": "63.84",
         "accountID": 9
     },
+    "143": {
+        "transactionDate": "2010-08-25",
+        "transactionType": "transfer",
+        "merchantName": "Home Depot",
+        "transactionAmount": "4.38",
+        "accountID": 19
+    },
+    "144": {
+        "transactionDate": "2022-07-22",
+        "transactionType": "transfer",
+        "merchantName": "Cumberland Farms",
+        "transactionAmount": "597.33",
+        "accountID": 8
+    },
+    "145": {
+        "transactionDate": "2005-02-25",
+        "transactionType": "refund",
+        "merchantName": "Verizon",
+        "transactionAmount": "937.37",
+        "accountID": 14
+    },
+    "146": {
+        "transactionDate": "2011-04-27",
+        "transactionType": "withdrawal",
+        "merchantName": "Kroger",
+        "transactionAmount": "802.14",
+        "accountID": 13
+    },
     "147": {
-        "transactionDate": "1996-08-25",
+        "transactionDate": "2019-09-26",
         "transactionType": "deposit",
-        "merchantName": "Ikea",
-        "transactionAmount": "33.66",
-        "accountID": 3
+        "merchantName": "Target",
+        "transactionAmount": "87.06",
+        "accountID": 11
     },
     "148": {
-        "transactionDate": "1994-05-28",
+        "transactionDate": "2024-06-07",
         "transactionType": "withdrawal",
-        "merchantName": "Taco Bell",
-        "transactionAmount": "3.49",
-        "accountID": 4
+        "merchantName": "Walgreens",
+        "transactionAmount": "5015.23",
+        "accountID": 17
     },
     "149": {
-        "transactionDate": "2024-11-08",
+        "transactionDate": "1973-02-02",
         "transactionType": "transfer",
-        "merchantName": "Patreon",
-        "transactionAmount": "3907.94",
-        "accountID": 2
+        "merchantName": "Taco Bell",
+        "transactionAmount": "7.01",
+        "accountID": 1
     }
 }
