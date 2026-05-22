@@ -2,6 +2,9 @@
 
 An intelligent chatbot assistant for "Bank of Gotham" that helps customers manage their accounts, check balances, view transactions, and get answers to banking policy questions.
 
+<img width="1508" height="837" alt="Screenshot 2026-05-17 at 9 00 19 PM" src="https://github.com/user-attachments/assets/09b5e893-34e8-4e34-98dc-47a824ebd1dd" />
+
+
 ## Project Overview
 
 Gordon is an AI-powered banking assistant built with cutting-edge technologies to provide a seamless customer experience. The chatbot leverages large language models (LLMs) and retrieval-augmented generation (RAG) to intelligently respond to customer inquiries about their accounts and banking policies.
