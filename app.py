@@ -180,6 +180,7 @@ with st.sidebar:
     if new_id != st.session_state.cust_id:
         st.session_state.cust_id = new_id
         st.session_state.messages = chatbot.new_conversation()
+        st.session_state.acc_id = ""
     
     if st.session_state.cust_id:
         cust = CUSTOMERS.get(st.session_state.cust_id)
